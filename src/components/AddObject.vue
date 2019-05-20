@@ -26,7 +26,7 @@ export default {
       this.content = '';
     },
   },
-}
+};
 </script>
 
 <style scoped>
