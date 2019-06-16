@@ -29,20 +29,6 @@ export default {
 };
 </script>
 
-<style scoped>
-#darkbox {
-  padding: 10px;
-  position: relative;
-  width: 30%;
-  margin: 20px auto 20px auto;
-
-  color: white;
-  font-family: verdana;
-  font-size: 16px;
-
-  background-color: hsl(0, 0%, 20%);
-}
-#btn {
-  margin: 10px;
-}
+<style lang="scss">
+  @import '../styles/General.scss';
 </style>

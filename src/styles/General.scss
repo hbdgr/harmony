@@ -1,0 +1,93 @@
+div {
+  padding: 10px 5px 10px 5px;
+}
+
+#boxedIdx {
+  padding: 3px;
+
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+
+  background-color: hsl(0, 0%, 15%);
+  font-size: 11px;
+}
+
+#boxed {
+  position: relative;
+  align: center;
+  width: 400px;
+  height: 40px;
+  padding: 5px 5px 20px 5px;
+  margin: 0px auto 0px auto;
+
+  border: 2px solid Black;
+  background-color: hsl(0, 0%, 10%);
+  color: white;
+  font-family: verdana;
+}
+
+#darkbox {
+  align: center;
+  padding: 10px;
+  position: relative;
+  width: 97%;
+  margin: 0px auto 0px auto;
+
+  color: white;
+  font-family: verdana;
+  font-size: 16px;
+
+  background-color: hsl(0, 0%, 20%);
+}
+#btn {
+  margin: 10px;
+}
+
+#contentText {
+  font-size: 14px;
+  padding: 0px 0px 0px 15px;
+}
+
+.pane {
+  width: 100%;
+  height: 960px;
+}
+.custom-resizer {
+  height: 800px;
+}
+.custom-resizer > .pane {
+  text-align: left;
+  padding: 15px;
+  overflow: hidden;
+  background: #eee;
+  border: 1px solid #ccc;
+}
+
+.custom-resizer > .pane ~ .pane {
+}
+
+.custom-resizer > .multipane-resizer {
+  margin: 0; left: 0;
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 3px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -20px;
+    margin-left: -1.5px;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+  }
+  &:hover {
+    &:before {
+      border-color: #999;
+    }
+  }
+}

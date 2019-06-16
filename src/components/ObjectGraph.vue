@@ -53,37 +53,5 @@ export default {
 </script>
 
 <style lang="scss">
-  @import './ObjectGraph.scss';
-  div {
-    padding: 10px 5px 10px 5px;
-  }
-
-  input {
-    width: 70%;
-    padding: 5px 5px 5px 5px;
-    margin: 10px auto 10px auto;
-
-    background-color: DarkGrey;
-    border: 2px solid Black;
-  }
-
-  button {
-    position: relative;
-    width: 50%;
-    padding: 10px 20px 10px 20px;
-
-    background-color: DarkGrey;
-    color: black;
-    font-family: verdana;
-
-    border: 2px solid Black;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-  }
-
-  button:hover {
-    background-color: hsl(0, 0%, 10%);
-    color: white;
-  }
-
+  @import '../styles/ObjectGraph.scss';
 </style>
