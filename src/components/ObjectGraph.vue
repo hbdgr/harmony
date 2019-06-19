@@ -1,6 +1,6 @@
 <template>
   <div class="object_graph">
-    <div id="darkbox">
+    <div class="darkbox">
       <button @click="getObjects">Show All Objects</button>
       <div v-if="objects.length">
         <div v-for="obj in objects" :key="obj.id" class="column">

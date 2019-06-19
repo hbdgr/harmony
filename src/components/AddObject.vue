@@ -1,10 +1,10 @@
 <template>
   <div class="mainview">
-    <div id="darkbox">
+    <div class="darkbox">
       Object creation, write contenet and press enter
       <br>
       <input v-model="content" @keyup.enter="addObject">
-      <button id="btn" @click="addObject">Add</button>
+      <button @click="addObject">Add</button>
     </div>
   </div>
 </template>

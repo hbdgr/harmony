@@ -3,7 +3,7 @@
     <div id="boxedIdx">
       {{ object.id }}
     </div>
-      <p id="contentText">{{ object.content }}</p>
+      <p class="contentText">{{ object.content }}</p>
   </div>
 </template>
 
