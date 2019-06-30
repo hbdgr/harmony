@@ -1,7 +1,7 @@
 <template>
   <div class="object_graph">
-    <div class="darkbox">
-      <button @click="getObjects">Show All Objects</button>
+    <div class="darkbox objectsbox">
+      <button @click="getObjects">Show <i>All</i> Objects</button>
       <div v-if="objects.length">
         <div v-for="obj in objects" :key="obj.id" class="column">
           <SimpleObject :object="obj" />

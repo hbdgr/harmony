@@ -4,6 +4,7 @@
       Object creation, write contenet and press enter
       <br>
       <input v-model="content" @keyup.enter="addObject">
+      <br>
       <button @click="addObject">Add</button>
     </div>
   </div>
