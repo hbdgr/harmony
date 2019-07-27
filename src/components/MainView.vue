@@ -9,6 +9,11 @@
         <ObjectGraph />
       </div>
     </multipane>
+    <div>
+      <b-modal id=delete-modal title="DELETME" no-stacking>
+        Are you sure, you want to delete this element?
+      </b-modal>
+    </div>
   </div>
 </template>
 
