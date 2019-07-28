@@ -1,6 +1,7 @@
 <template>
   <div>
     <button @click="toggleSelected">toggle details {{ objectSelected }}</button>
+
     <multipane class="custom-resizer" layout="vertical">
     <ObjectDetails v-if="showDetails" class="pane"/>
     <multipane-resizer v-if="showDetails" />
@@ -9,11 +10,7 @@
         <ObjectGraph />
       </div>
     </multipane>
-    <div>
-      <b-modal id=delete-modal title="DELETME" no-stacking>
-        Are you sure, you want to delete this element?
-      </b-modal>
-    </div>
+
   </div>
 </template>
 
@@ -45,7 +42,7 @@ export default {
   methods: {
     toggleSelected() {
       this.objectSelected = !this.objectSelected;
-    }
+    },
   },
 };
 </script>

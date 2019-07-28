@@ -15,6 +15,14 @@ button {
   font-size: 15px;
 }
 
+#delete-modal {
+  position: absolute;
+  top: 0;
+  color: white;
+  align-items: center;
+  background-color: hsl(0, 0%, 20%);
+}
+
 .boxed {
   position: relative;
   align: center;
@@ -61,9 +69,11 @@ button {
   color: hsl(0%, 50%, 25%);
 }
 
-// ? not work
+// make animation
 .trash:hover {
-  color: blue !important;
+  // color: blue !important;
+  color: hsl(0%, 50%, 75%) !important;
+  animation:  color_change 3s;
 }
 
 .pane {

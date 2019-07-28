@@ -1,5 +1,8 @@
 <template>
   <div class="object_graph">
+
+    <DeleteModal :objectId="selectedObjectId"/>
+
     <div class="darkbox objectsbox">
       <button @click="getObjects">Show <i>All</i> Objects</button>
       <div v-if="objects.length">
@@ -12,12 +15,15 @@
 </template>
 
 <script>
+import store from '@/store.js'
 import DataApi from '@/services/DataApi';
+import DeleteModal from '@/modals/DeleteModal.vue';
 import SimpleObject from './SimpleObject.vue';
 
 export default {
   name: 'ObjectGraph',
   components: {
+    DeleteModal,
     SimpleObject,
   },
   data() {
@@ -31,6 +37,9 @@ export default {
     filteredEntries() {
       const bad = ['bad', 'weak', 'boring'];
       return this.entries.filter(entry => bad.indexOf(entry.toLowerCase()) === -1);
+    },
+    selectedObjectId() {
+      return store.state.objectId;
     },
   },
   filters: {

@@ -10,4 +10,7 @@ export default {
   post(content) {
     return Connection().post('objects', { content });
   },
+  deleteId(id) {
+    return Connection().delete(`objects/${id}`);
+  },
 };
