@@ -16,11 +16,10 @@ button {
 }
 
 #delete-modal {
-  position: absolute;
-  top: 0;
+  position: static;
   color: white;
   align-items: center;
-  background-color: hsl(0, 0%, 20%);
+  background-color: hsl(0, 10%, 40%);
 }
 
 .boxed {
