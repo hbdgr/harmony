@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import DataApi from '@/services/DataApi';
+import store from '@/store.js'
 
 export default {
   name: 'AddObject',
@@ -22,8 +22,12 @@ export default {
   },
   methods: {
     addObject() {
-      console.log('Inserting:', this.content);
-      DataApi.post(this.content);
+      if (this.content.length == 0) {
+        console.log("Trying to add empty obiect")
+        return
+      }
+
+      store.dispatch('addObject', {content: this.content});
       this.content = '';
     },
   },

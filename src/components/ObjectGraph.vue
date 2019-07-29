@@ -4,8 +4,7 @@
     <DeleteModal :objectId="selectedObjectId"/>
 
     <div class="darkbox objectsbox">
-      <button @click="getObjects">Show <i>All</i> Objects</button>
-      <div v-if="objects.length">
+      <div v-if="objectsUpToDate">
         <div v-for="obj in objects" :key="obj.id" class="column">
           <SimpleObject :object="obj" />
         </div>
@@ -16,7 +15,6 @@
 
 <script>
 import store from '@/store.js'
-import DataApi from '@/services/DataApi';
 import DeleteModal from '@/modals/DeleteModal.vue';
 import SimpleObject from './SimpleObject.vue';
 
@@ -27,36 +25,29 @@ export default {
     SimpleObject,
   },
   data() {
-    return {
-      entry: '',
-      entries: [],
-      objects: [],
-    };
+    return {};
+  },
+  created() {
+    store.dispatch('updateObjects');
   },
   computed: {
-    filteredEntries() {
-      const bad = ['bad', 'weak', 'boring'];
-      return this.entries.filter(entry => bad.indexOf(entry.toLowerCase()) === -1);
+    objects() {
+      return store.getters.objects;
+    },
+    objectsUpToDate() {
+      let upToDate = store.getters.objectsUpToDate;
+      if (!upToDate) {
+        store.dispatch('updateObjects');
+      }
+      return upToDate;
     },
     selectedObjectId() {
       return store.state.objectId;
     },
   },
   filters: {
-    shout(value) {
-      return `They said "${value}"!`;
-    },
   },
   methods: {
-    addEntry() {
-      this.entries.push(this.entry);
-      this.entry = '';
-    },
-    async getObjects() {
-      const objects = await DataApi.getAll();
-      console.log(objects);
-      this.objects = objects.data;
-    },
   },
 };
 </script>
