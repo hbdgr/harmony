@@ -2,8 +2,8 @@
   <div class="object_graph">
 
     <DeleteModal :objectId="selectedObjectId"/>
-
-    <div class="darkbox objectsbox">
+               <!-- Selected: {{ objectSelected }} -->
+    <div @click="unselectObject" class="darkbox objectsbox">
       <div v-if="objectsUpToDate">
         <div v-for="obj in objects" :key="obj.id" class="column">
           <SimpleObject :object="obj" />
@@ -41,6 +41,9 @@ export default {
       }
       return upToDate;
     },
+    objectSelected() {
+      return store.getters.objectSelected;
+    },
     selectedObjectId() {
       return store.state.objectId;
     },
@@ -48,6 +51,10 @@ export default {
   filters: {
   },
   methods: {
+    unselectObject() {
+      // should not cover objects
+      // store.commit('objectSelected', { selected: false })
+    },
   },
 };
 </script>

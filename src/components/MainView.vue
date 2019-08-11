@@ -1,7 +1,5 @@
 <template>
   <div>
-    <button @click="toggleSelected">toggle details {{ objectSelected }}</button>
-
     <multipane class="custom-resizer" layout="vertical">
     <ObjectDetails v-if="showDetails" class="pane"/>
     <multipane-resizer v-if="showDetails" />
@@ -16,6 +14,7 @@
 
 <script>
 import { Multipane, MultipaneResizer } from 'vue-multipane';
+import store from '@/store.js'
 import ObjectGraph from './ObjectGraph.vue';
 import AddObject from './AddObject.vue';
 import ObjectDetails from './ObjectDetails.vue';
@@ -31,17 +30,14 @@ export default {
   },
   data() {
     return {
-      objectSelected: false,
     };
   },
   computed: {
     showDetails() {
       return this.objectSelected;
-    }
-  },
-  methods: {
-    toggleSelected() {
-      this.objectSelected = !this.objectSelected;
+    },
+    objectSelected() {
+      return store.getters.objectSelected;
     },
   },
 };

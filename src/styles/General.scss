@@ -1,5 +1,5 @@
 div {
-  padding: 10px 5px 5px 5px;
+  padding: 2px 2px 2px 2px;
 }
 
 input {
@@ -10,16 +10,35 @@ input {
 
 button {
   margin: 10px;
-  width: 400px;
-  height: 40px;
+  width: 300px;
+  height: 45px;
   font-size: 15px;
 }
 
-#delete-modal {
-  position: static;
+.darkbox {
+  align: center;
+  padding: 10px;
+  position: relative;
+
+  width: 97%;
+  margin: 0px auto 0px auto;
+
   color: white;
+  font-family: verdana;
+  font-size: 16px;
+
+  background-color: hsl(0, 0%, 20%);
+}
+
+.objectsbox {
+  height: 680px;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+
+#delete-modal {
   align-items: center;
-  background-color: hsl(0, 10%, 40%);
 }
 
 .boxed {
@@ -49,6 +68,25 @@ button {
   font-size: 11px;
 }
 
+.closeBox {
+  margin: 5px;
+  padding: 0px 0px 30px 0px;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  border: 0;
+  width: 30px;
+  height: 25px;
+
+  background-color: #eee;
+}
+
+.closeBox:hover {
+  background-color: #eee;
+}
+
 .trashBox {
   margin: 2px;
   padding: 1px;
@@ -63,15 +101,18 @@ button {
   height: 20px;
 }
 
+.trashBox:hover {
+  background-color: hsl(0%, 0%, 10%);
+}
+
 .trash {
-  color: hsl(0%, 50%, 25%);
+  color: hsl(0%, 90%, 35%);
 }
 
 // make animation
 .trash:hover {
-  // color: blue !important;
-  color: hsl(0%, 50%, 75%) !important;
-  animation:  color_change 3s;
+  color: hsl(0%, 90%, 75%) !important;
+  animation: color_change 3s;
 }
 
 .pane {
@@ -88,27 +129,6 @@ button {
   padding: 0px 0px 0px 15px;
   font-size: 14px;
   text-align: left;
-}
-
-.darkbox {
-  align: center;
-  padding: 10px;
-  position: relative;
-
-  width: 97%;
-  margin: 0px auto 0px auto;
-
-  color: white;
-  font-family: verdana;
-  font-size: 16px;
-
-  background-color: hsl(0, 0%, 20%);
-}
-
-.objectsbox {
-  height: 680px;
-  overflow-x: auto;
-  overflow-y: auto;
 }
 
 .custom-resizer {

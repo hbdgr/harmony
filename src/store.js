@@ -7,11 +7,15 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    selected: false,
     objectsUpdToDate: false,
     objects: [],
     objectId: -1,
   },
   mutations: {
+    objectSelected(state, payload) {
+      state.selected = payload.selected;
+    },
     setObjectId(state, payload) {
       state.objectId = payload.id;
     },
@@ -26,6 +30,9 @@ export default new Vuex.Store({
     },
   },
   getters: {
+    objectSelected(state) {
+      return state.selected;
+    },
     objectsUpToDate(state) {
       return state.objectsUpdToDate;
     },

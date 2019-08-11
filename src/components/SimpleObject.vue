@@ -1,5 +1,5 @@
 <template>
-  <div class="boxed">
+  <div class="boxed" @click="selectObject">
     <div class="boxedIdx">
       {{ object.id }}
     </div>
@@ -20,6 +20,10 @@ export default {
   },
   methods: {
     saveObjectId() {
+      store.commit('setObjectId', { id: this.object.id })
+    },
+    selectObject() {
+      store.commit('objectSelected', { selected: true })
       store.commit('setObjectId', { id: this.object.id })
     }
   },
