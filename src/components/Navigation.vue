@@ -1,7 +1,7 @@
 <template>
   <div id="nav">
     <b-navbar id="navbar" toggleable="lg" type="dark">
-      <b-navbar-brand href="#">Notes</b-navbar-brand>
+      <b-navbar-brand href="#">Harmony</b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 

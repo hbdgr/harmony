@@ -1,4 +1,4 @@
-# mindmap
+# Harmony
 
 ## Project setup
 ```
