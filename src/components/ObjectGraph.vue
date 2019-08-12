@@ -1,9 +1,7 @@
 <template>
-  <div class="object_graph">
-
+  <div>
     <DeleteModal :objectId="selectedObjectId"/>
-               <!-- Selected: {{ objectSelected }} -->
-    <div @click="unselectObject" class="darkbox objectsbox">
+    <div @click="unselectObject" class="main-darkbox">
       <div v-if="objectsUpToDate">
         <div v-for="obj in objects" :key="obj.id" class="column">
           <SimpleObject :object="obj" />

@@ -2,26 +2,17 @@ div {
   padding: 2px 2px 2px 2px;
 }
 
-input {
-  align-items: top;
-  height: 35px;
-  font-size: 25px;
-}
-
-button {
-  margin: 10px;
-  width: 300px;
-  height: 45px;
-  font-size: 15px;
+.add-button {
+  min-width: 180px;
 }
 
 .darkbox {
   align: center;
-  padding: 10px;
+  padding: 5px;
   position: relative;
 
   width: 97%;
-  margin: 0px auto 0px auto;
+  margin: 5px auto 5px auto;
 
   color: white;
   font-family: verdana;
@@ -30,12 +21,15 @@ button {
   background-color: hsl(0, 0%, 20%);
 }
 
-.objectsbox {
-  height: 680px;
+.main-darkbox {
+  @extend .darkbox;
+
+  height: 815px;
+  flex-grow: 1;
+
   overflow-x: auto;
   overflow-y: auto;
 }
-
 
 #delete-modal {
   align-items: center;
@@ -44,11 +38,12 @@ button {
 .boxed {
   position: relative;
   align: center;
-  width: 500px;
   padding: 10px 20px 20px 5px;
-  margin: 0px auto 0px auto;
+  margin: 1px auto 0px auto;
 
+  width: 550px;
   border: 2px solid Black;
+
   background-color: hsl(0, 0%, 10%);
   color: white;
   font-family: verdana;
@@ -115,55 +110,9 @@ button {
   animation: color_change 3s;
 }
 
-.pane {
-  width: 100%;
-  height: 900px;
-}
-
-.mainpane {
-  flexGrow: 1;
-}
-
 .contentText {
   margin: 15px auto auto 10px;
   padding: 0px 0px 0px 15px;
   font-size: 14px;
   text-align: left;
-}
-
-.custom-resizer {
-  height: 800px;
-}
-.custom-resizer > .pane {
-  text-align: center;
-  padding: 10px;
-  overflow: hidden;
-  background: #eee;
-  border: 1px solid #ccc;
-}
-
-.custom-resizer > .pane ~ .pane {
-}
-
-.custom-resizer > .multipane-resizer {
-  margin: 0; left: 0;
-  position: relative;
-  &:before {
-    display: block;
-    content: "";
-    width: 3px;
-    height: 40px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -20px;
-    margin-left: -1.5px;
-    border-left: 1px solid #ccc;
-    border-right: 1px solid #ccc;
-  }
-  &:hover {
-    &:before {
-      border-color: #999;
-    }
-  }
 }

@@ -1,0 +1,54 @@
+.details-pane {
+  width: 500px;
+  min-width: 20%;
+}
+
+.mainpane {
+  flex-grow: 1;
+}
+
+.pane {
+  width: 35%;
+  min-width: 25%;
+  flex-flow: column;
+}
+
+.custom-resizer {
+  position: absolute;
+  height: 94%;
+  width: 99.3%;
+}
+
+.custom-resizer > .pane {
+  text-align: center;
+  padding: 10px;
+  overflow: hidden;
+  background: #eee;
+  border: 1px solid #ccc;
+}
+
+.custom-resizer > .pane ~ .pane {
+}
+
+.custom-resizer > .multipane-resizer {
+  margin: 0; left: 0;
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 3px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -20px;
+    margin-left: -1.5px;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+  }
+  &:hover {
+    &:before {
+      border-color: #999;
+    }
+  }
+}

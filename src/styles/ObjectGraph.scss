@@ -1,34 +1,3 @@
-input {
-  width: 70%;
-  padding: 5px 5px 5px 5px;
-  margin: 10px auto 10px auto;
-
-  background-color: DarkGrey;
-  border: 2px solid Black;
-}
-
-button {
-  position: relative;
-  width: 30%;
-  padding: 10px 20px 10px 20px;
-  margin: auto;
-
-  background-color: DarkGrey;
-  color: black;
-  font-family: verdana;
-
-  border: 2px solid Black;
-
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-}
-
-button:hover {
-  background-color: hsl(0, 0%, 10%);
-  color: white;
-}
-
 .column {
-  // column-count: 3;
   border: 1px;
 }

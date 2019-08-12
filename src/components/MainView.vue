@@ -1,9 +1,9 @@
 <template>
   <div>
     <multipane class="custom-resizer" layout="vertical">
-    <ObjectDetails v-if="showDetails" class="pane"/>
+    <ObjectDetails class="pane" v-if="showDetails" />
     <multipane-resizer v-if="showDetails" />
-      <div class="pane mainpane" key="main">
+      <div class="mainpane pane" key="main">
         <AddObject />
         <ObjectGraph />
       </div>
@@ -44,5 +44,5 @@ export default {
 </script>
 
 <style lang="scss">
-  @import '../styles/General.scss';
+  @import '../styles/MainPane.scss';
 </style>
