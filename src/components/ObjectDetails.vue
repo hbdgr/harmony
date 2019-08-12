@@ -1,9 +1,16 @@
 <template>
   <div>
-    Selected object details: {{ selectedObjectId }}
     <button class="closeBox" @click="close">
       <v-icon class="close" name="regular/window-close" scale="1.9"/>
     </button>
+    <div class="object-details">
+      <h4> ID: {{ selectedObject.id }} </h4>
+      <hr>
+      <h3>Content:</h3>
+      <p>
+        {{ selectedObject.content }}
+      </p>
+    </div>
   </div>
 </template>
 
@@ -23,6 +30,9 @@ export default {
   computed: {
     selectedObjectId() {
       return store.state.objectId;
+    },
+    selectedObject() {
+      return store.getters.objectById(this.selectedObjectId)
     },
   },
   methods: {

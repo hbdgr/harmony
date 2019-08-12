@@ -39,6 +39,9 @@ export default new Vuex.Store({
     objects(state) {
       return state.objects;
     },
+    objectById: state => id => {
+      return state.objects.find(obj => obj.id === id)
+    },
   },
   actions: {
     async updateObjects({ commit, state }) {
