@@ -11,6 +11,8 @@
         {{ selectedObject.content }}
       </p>
     </div>
+    <hr>
+    <b-button variant="danger" v-b-modal.delete-modal style="float: right">Delete</b-button>
   </div>
 </template>
 

@@ -18,6 +18,7 @@ export default {
   methods: {
     deleteOk() {
       store.dispatch('deleteObject', { objectId: this.objectId })
+      store.commit('objectSelected', { selected: false })
     },
   },
 };

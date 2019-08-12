@@ -3,9 +3,9 @@
     <div class="boxedIdx">
       {{ object.id }}
     </div>
-    <b-button class="trashBox" @click="saveObjectId" v-b-modal.delete-modal>
+    <button class="trashBox" @click.stop="trashClicked" v-b-modal.delete-modal>
       <v-icon class="trash" name="trash" scale="0.9" />
-    </b-button>
+    </button>
     <p class="contentText">{{ object.content }}</p>
   </div>
 </template>
@@ -18,13 +18,35 @@ export default {
   props: {
     object: Object,
   },
+  computed: {
+    selected() {
+      return store.getters.objectSelected;
+    },
+    theSameObjectSelected() {
+      if (!this.selected) {
+        return false
+      }
+      return store.state.objectId === this.object.id;
+    },
+  },
   methods: {
+    trashClicked() {
+      this.saveObjectId()
+      console.log("trash hello")
+    },
     saveObjectId() {
       store.commit('setObjectId', { id: this.object.id })
     },
     selectObject() {
+      // unselect for double clicking the same object
+      if (this.theSameObjectSelected) {
+        store.commit('objectSelected', { selected: false })
+        return
+      }
+
       store.commit('objectSelected', { selected: true })
-      store.commit('setObjectId', { id: this.object.id })
+      this.saveObjectId()
+    console.log("select obj hello")
     }
   },
 };
