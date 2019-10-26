@@ -11,8 +11,8 @@ div {
   padding: 5px;
   position: relative;
 
-  width: 97%;
-  margin: 5px 10px 5px auto;
+  width: 99%;
+  margin: 5px auto 5px auto;
 
   color: white;
   font-family: verdana;
@@ -24,7 +24,7 @@ div {
 .main-darkbox {
   @extend .darkbox;
 
-  height: 815px;
+  height: 88%;
   flex-grow: 1;
 
   overflow-x: auto;
@@ -59,8 +59,8 @@ div {
   position: absolute;
   top: 0;
   left: 0;
-  width: 10px;
-  height: 10px;
+  width: 22px;
+  height: 20px;
 
   background-color: hsl(0, 0%, 15%);
   font-size: 11px;

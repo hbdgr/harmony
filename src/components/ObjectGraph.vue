@@ -1,11 +1,9 @@
 <template>
-  <div>
+  <div class="main-darkbox" @click="unselectObject">
     <DeleteModal :objectId="selectedObjectId"/>
-    <div @click="unselectObject" class="main-darkbox">
-      <div v-if="objectsUpToDate">
-        <div v-for="obj in objects" :key="obj.id" class="column">
-          <SimpleObject :object="obj" />
-        </div>
+    <div v-if="objectsUpToDate">
+      <div v-for="obj in objects" :key="obj.id" class="column">
+        <SimpleObject :object="obj" />
       </div>
     </div>
   </div>

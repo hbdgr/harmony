@@ -6,9 +6,14 @@
     <div class="object-details">
       <h4> ID: {{ selectedObject.id }} </h4>
       <hr>
-      <h3>Content:</h3>
+      <h4>Title:</h4>
       <p>
-        {{ selectedObject.content }}
+        {{ selectedObject.header }}
+      </p>
+      <hr>
+      <h4>Content:</h4>
+      <p>
+        {{ selectedObject.body }}
       </p>
     </div>
     <hr>
