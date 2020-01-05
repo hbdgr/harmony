@@ -4,16 +4,16 @@
       <v-icon class="close" name="regular/window-close" scale="1.9"/>
     </button>
     <div class="object-details">
-      <h4> ID: {{ selectedObject.id }} </h4>
+      <h4> Hash: {{ selectedObjectHash }} </h4>
       <hr>
       <h4>Title:</h4>
       <p>
-        {{ selectedObject.header }}
+        {{ selectedObject.content.header }}
       </p>
       <hr>
       <h4>Content:</h4>
       <p>
-        {{ selectedObject.body }}
+        {{ selectedObject.content.body }}
       </p>
     </div>
     <hr>
@@ -35,11 +35,11 @@ export default {
     };
   },
   computed: {
-    selectedObjectId() {
-      return store.state.objectId;
+    selectedObjectHash() {
+      return store.state.objectHash;
     },
     selectedObject() {
-      return store.getters.objectById(this.selectedObjectId)
+      return store.getters.objectByHash(this.selectedObjectHash)
     },
   },
   methods: {

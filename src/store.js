@@ -8,25 +8,28 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     selected: false,
-    objectsUpdToDate: false,
+    objectsUpToDate: false,
     objects: [],
-    objectId: -1,
+    objectHash: "AAAA",
   },
   mutations: {
     objectSelected(state, payload) {
       state.selected = payload.selected;
     },
-    setObjectId(state, payload) {
-      state.objectId = payload.id;
+    setObjectHash(state, payload) {
+      console.log("[store] setObjectHash, payload: ", payload)
+      state.objectHash = payload.hash;
     },
     setObjects (state,objects) {
       state.objects = objects;
     },
-    objectsUpdToDate(state, payload) {
-      state.objectsUpdToDate = payload.objectsUpdToDate;
+    objectsUpToDate(state, payload) {
+      console.log("[store] objectsUpToDate, payload: ", payload)
+      state.objectsUpToDate = payload.objectsUpToDate;
     },
     deleteObject(state, payload) {
-      state.objects = state.objects.filter(obj => obj.id != payload.objectId);
+      console.log("[store] deleteObject, payload: ", payload)
+      state.objects = state.objects.filter(obj => obj.hash != payload.objectHash);
     },
   },
   getters: {
@@ -34,45 +37,45 @@ export default new Vuex.Store({
       return state.selected;
     },
     objectsUpToDate(state) {
-      return state.objectsUpdToDate;
+      return state.objectsUpToDate;
     },
     objects(state) {
       return state.objects;
     },
-    objectById: state => id => {
-      return state.objects.find(obj => obj.id === id)
+    objectByHash: state => hash => {
+      return state.objects.find(obj => obj.hash === hash)
     },
   },
   actions: {
     async updateObjects({ commit, state }) {
-      if (!state.objectsUpdToDate) {
+      if (!state.objectsUpToDate) {
         const objects = await DataApi.getAll();
-        console.log(objects); // dbg
+        console.log(objects.data); // dbg
 
-        commit('objectsUpdToDate', { objectsUpdToDate: true});
+        commit('objectsUpToDate', { objectsUpToDate: true});
         commit('setObjects', objects.data)
       }
     },
     deleteObject ({commit, state}, payload) {
-      let id = payload.objectId;
-      DataApi.deleteId(id)
+      let hash = payload.objectHash;
+      DataApi.deleteHash(hash)
         .then((state) => {
-          console.log(`Delete object, id: ${id}`);
+          console.log(`[store] deleteObject, hash: ${hash}`);
           commit('deleteObject', payload);
         })
         .catch(err => {
-          console.log(`Failed to delete object: ${err}`);
+          console.log(`[store] Failed to delete object: ${err}`);
         });
     },
     addObject({commit, state}, payload) {
       let content = payload.content;
       DataApi.post(content)
         .then((state) => {
-          console.log(`Add object, content: ${content}`);
-          commit('objectsUpdToDate', { objectsUpdToDate: false});
+          console.log(`[store] addObject, content: ${content}`);
+          commit('objectsUpToDate', { objectsUpToDate: false});
         })
         .catch(err => {
-          console.log(`Failed to add object: ${err}`);
+          console.log(`[store] Failed to add object: ${err}`);
         });
     },
   },

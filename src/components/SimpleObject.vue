@@ -1,12 +1,12 @@
 <template>
   <div class="boxed" @click="selectObject">
     <div class="boxedIdx">
-      {{ object.id }}
+      {{ object.hash }}
     </div>
     <button class="trashBox" @click.stop="trashClicked" v-b-modal.delete-modal>
       <v-icon class="trash" name="trash" scale="0.9" />
     </button>
-    <p class="contentText">{{ object.body }}</p>
+    <p class="contentText">{{ object.content }}</p>
   </div>
 </template>
 
@@ -26,16 +26,15 @@ export default {
       if (!this.selected) {
         return false
       }
-      return store.state.objectId === this.object.id;
+      return store.state.objectHash === this.object.hash;
     },
   },
   methods: {
     trashClicked() {
-      this.saveObjectId()
-      console.log("trash hello")
+      this.saveObjectHash()
     },
-    saveObjectId() {
-      store.commit('setObjectId', { id: this.object.id })
+    saveObjectHash() {
+      store.commit('setObjectHash', { hash: this.object.hash })
     },
     selectObject() {
       // unselect for double clicking the same object
@@ -45,8 +44,7 @@ export default {
       }
 
       store.commit('objectSelected', { selected: true })
-      this.saveObjectId()
-    console.log("select obj hello")
+      this.saveObjectHash()
     }
   },
 };

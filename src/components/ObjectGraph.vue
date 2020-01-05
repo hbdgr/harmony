@@ -1,8 +1,8 @@
 <template>
   <div class="main-darkbox" @click="unselectObject">
-    <DeleteModal :objectId="selectedObjectId"/>
+    <DeleteModal :objectHash="selectedObjectHash"/>
     <div v-if="objectsUpToDate">
-      <div v-for="obj in objects" :key="obj.id" class="column">
+      <div v-for="obj in objects" :key="obj.hash" class="column">
         <SimpleObject :object="obj" />
       </div>
     </div>
@@ -40,8 +40,8 @@ export default {
     objectSelected() {
       return store.getters.objectSelected;
     },
-    selectedObjectId() {
-      return store.state.objectId;
+    selectedObjectHash() {
+      return store.state.objectHash;
     },
   },
   filters: {
