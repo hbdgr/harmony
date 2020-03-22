@@ -1,25 +1,29 @@
 <template>
   <div class="darkbox">
-    <b-container fluid style="max-width: 900px">
-      <b-row>
-        <b-col>
-          <b-form-input v-model="content" @keyup.enter="addObject" placeholder="Write content" />
-        </b-col>
-      </b-row>
-      <b-row>
-        <b-col>
-          <b-button class="add-button" @click="addObject" variant="secondary" style="float: left">Add</b-button>
-        </b-col>
-        <b-col>
-          <b-button class="add-button" @click="clear" variant="info" style="float: right">Clear</b-button>
-        </b-col>
-      </b-row>
-    </b-container>
+    <b-button v-b-toggle.collapse-addobject variant="primary" class="add-object-button">Dodaj nowy obiekt</b-button>
+    <b-collapse id="collapse-addobject" class="mt-2">
+      <b-container fluid style="max-width: 900px">
+        <b-row>
+          <b-col>
+            <b-form-input v-model="content" @keyup.enter="addObject" placeholder="Napisz..." />
+          </b-col>
+        </b-row>
+        <b-row>
+          <b-col>
+            <b-button class="add-button" v-b-toggle="'collapse-addobject'" @click="addObject" variant="secondary" style="float: left">Dodaj</b-button>
+          </b-col>
+          <b-col>
+            <b-button class="add-button" @click="clear" variant="info" style="float: right">Wyczyść</b-button>
+          </b-col>
+        </b-row>
+      </b-container>
+    </b-collapse>
   </div>
 </template>
 
 <script>
 import store from '@/store.js'
+// https://github.com/F-loat/vue-simplemde
 
 export default {
   name: 'AddObject',

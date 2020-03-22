@@ -6,7 +6,7 @@
     <button class="trashBox" @click.stop="trashClicked" v-b-modal.delete-modal>
       <v-icon class="trash" name="trash" scale="0.9" />
     </button>
-    <p class="contentText">{{ object.content }}</p>
+    <p class="contentText">{{ object.content.body }}</p>
   </div>
 </template>
 

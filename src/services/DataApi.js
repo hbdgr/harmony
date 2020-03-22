@@ -9,7 +9,9 @@ export default {
   },
   post(content) {
     return Connection().post('objects', {
-        header: "header",
+        header: {
+          object_type: "PrimaryElement",
+        },
         body: content,
     });
   },

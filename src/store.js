@@ -10,7 +10,7 @@ export default new Vuex.Store({
     selected: false,
     objectsUpToDate: false,
     objects: [],
-    objectHash: "AAAA",
+    objectHash: "",
   },
   mutations: {
     objectSelected(state, payload) {
