@@ -1,5 +1,7 @@
 <template>
   <div class="darkbox">
+    <ErrorModal :error="storeError" v-on:closed="storeError = ''"/>
+
     <b-button v-b-toggle.collapse-addobject variant="primary" class="add-object-button">Dodaj nowy obiekt</b-button>
     <b-collapse id="collapse-addobject" class="mt-2">
       <b-container fluid style="max-width: 900px">
@@ -22,14 +24,19 @@
 </template>
 
 <script>
+import ErrorModal from '@/modals/ErrorModal.vue';
 import store from '@/store.js'
 // https://github.com/F-loat/vue-simplemde
 
 export default {
   name: 'AddObject',
+  components: {
+    ErrorModal,
+  },
   data() {
     return {
       content: '',
+      storeError: '',
     };
   },
   methods: {
@@ -39,8 +46,12 @@ export default {
         return
       }
 
-      store.dispatch('addObject', {content: this.content});
-      this.content = '';
+      store.dispatch('addObject', {content: this.content}).then(res => {
+        console.log("Got object data")
+      }, err => {
+        this.storeError = err.message
+      })
+      this.content = ''
     },
     clear() {
       this.content = ""
