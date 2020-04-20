@@ -4,7 +4,24 @@
     <ObjectDetails class="pane" v-if="showDetails" />
     <multipane-resizer v-if="showDetails" />
       <div class="mainpane pane" key="main">
-        <AddObject />
+        <b-container style="border: 5">
+          <b-row>
+            <b-col>
+              <b-button v-b-toggle.collapse-addobject variant="primary" class="add-button">
+                Dodaj nowy obiekt
+              </b-button>
+            </b-col>
+            <b-col>
+              <b-button v-b-toggle.collapse-addrelation variant="primary" class="add-button">
+                Dodaj nową relację
+              </b-button>
+            </b-col>
+          </b-row>
+          <b-row>
+            <AddObject />
+            <AddRelation />
+          </b-row>
+        </b-container>
         <ObjectGraph />
       </div>
     </multipane>
@@ -15,8 +32,9 @@
 <script>
 import { Multipane, MultipaneResizer } from 'vue-multipane';
 import store from '@/store.js'
-import ObjectGraph from './ObjectGraph.vue';
 import AddObject from './AddObject.vue';
+import AddRelation from './AddRelation.vue';
+import ObjectGraph from './ObjectGraph.vue';
 import ObjectDetails from './ObjectDetails.vue';
 
 export default {
@@ -24,6 +42,7 @@ export default {
   components: {
     ObjectGraph,
     AddObject,
+    AddRelation,
     ObjectDetails,
     Multipane,
     MultipaneResizer,
@@ -45,4 +64,5 @@ export default {
 
 <style lang="scss">
   @import '../styles/MainPane.scss';
+  @import '../styles/Boxes.scss';
 </style>

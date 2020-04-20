@@ -1,0 +1,45 @@
+.darkbox {
+  align: center;
+  padding: 5px;
+  position: relative;
+
+  width: 99%;
+  margin: 5px auto 5px auto;
+
+  color: white;
+  font-family: verdana;
+  font-size: 16px;
+
+  background-color: hsl(0, 0%, 20%);
+}
+
+.main-darkbox {
+  @extend .darkbox;
+
+  height: 88%;
+  flex-grow: 1;
+
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+.whitebox {
+  align: center;
+  position: relative;
+
+  width: 99%;
+
+  color: white;
+}
+
+.collapsebox {
+  align: center;
+  text-align: left;
+
+  position: relative;
+
+  background-color: hsl(0, 0%, 20%);
+
+  height: auto;
+  width: auto;
+}

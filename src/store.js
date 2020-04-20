@@ -69,19 +69,24 @@ export default new Vuex.Store({
     },
     addObject({commit, state}, payload) {
       let content = payload.content;
+      let objectType = payload.objectType;
 
       return new Promise((resolve, reject) => {
-      DataApi.post(content)
-        .then((state) => {
-          console.log(`[store] addObject, content: ${content}`);
-          commit('objectsUpToDate', { objectsUpToDate: false});
-          resolve();
-        })
-        .catch(err => {
-          console.log(`[store] Failed to add object: ${err}`);
-          reject(err);
-        });
+        DataApi.post(objectType, content)
+          .then((state) => {
+            console.log('1')
+            console.log(`[store] addObject, content: ${content}`);
+            commit('objectsUpToDate', { objectsUpToDate: false});
+            console.log('2')
+            resolve();
+          })
+          .catch(err => {
+            console.log(`[store] Failed to add object: ${err}`);
+            reject(err);
+          });
       });
+    },
+    addRelation({commit, state}, payload) {
     },
   },
 });

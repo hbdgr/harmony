@@ -1,10 +1,19 @@
 <template>
-  <div class="darkbox">
+  <div class="whitebox">
     <ErrorModal :error="storeError" v-on:closed="storeError = ''"/>
 
-    <b-button v-b-toggle.collapse-addobject variant="primary" class="add-object-button">Dodaj nowy obiekt</b-button>
-    <b-collapse id="collapse-addobject" class="mt-2">
+    <b-collapse id="collapse-addobject" class="mt-2 collapsebox">
       <b-container fluid style="max-width: 900px">
+        <b-row>
+          <b-form-group label="Typ obiektu:">
+            <b-form-radio v-model="objectType" name="objType" value="PrimaryElement" default>
+              Objekt Elementarny
+            </b-form-radio>
+            <b-form-radio v-model="objectType" name="objType" value="RelationDefinition">
+              Definicja Relacji
+            </b-form-radio>
+          </b-form-group>
+        </b-row>
         <b-row>
           <b-col>
             <b-form-input v-model="content" @keyup.enter="addObject" placeholder="Napisz..." />
@@ -35,6 +44,7 @@ export default {
   },
   data() {
     return {
+      objectType: 'PrimaryElement',
       content: '',
       storeError: '',
     };
@@ -46,7 +56,12 @@ export default {
         return
       }
 
-      store.dispatch('addObject', {content: this.content}).then(res => {
+      if (!["PrimaryElement", "RelationDefinition"].includes(this.objectType)) {
+        this.storeError = "Niezdefiniowany typ obiektu"
+        return
+      }
+
+      store.dispatch('addObject', {objectType: this.objectType, content: this.content}).then(res => {
         console.log("Got object data")
       }, err => {
         this.storeError = err.message
@@ -55,11 +70,12 @@ export default {
     },
     clear() {
       this.content = ""
+      this.objectType = "PrimaryElement"
     },
   },
 };
 </script>
 
 <style lang="scss">
-  @import '../styles/General.scss';
+  @import '../styles/Boxes.scss';
 </style>

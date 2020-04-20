@@ -1,7 +1,7 @@
 <template>
   <div class="boxed" @click="selectObject">
     <div class="boxedIdx">
-      {{ object.hash }}
+      [{{ objectType }}] {{ object.hash }}
     </div>
     <button class="trashBox" @click.stop="trashClicked" v-b-modal.delete-modal>
       <v-icon class="trash" name="trash" scale="0.9" />
@@ -28,6 +28,18 @@ export default {
       }
       return store.state.objectHash === this.object.hash;
     },
+    objectType() {
+      let objType = this.object.content.header.object_type
+      if (objType == "PrimaryElement") {
+        return "Primary"
+      }
+
+      if (objType.RelationDefinition != null) {
+          return "Definition"
+      }
+
+      return "unknown"
+    }
   },
   methods: {
     trashClicked() {
