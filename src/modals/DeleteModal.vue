@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import store from '@/store.js'
+import store from '@/store'
 
 export default {
   name: 'DeleteModal',
@@ -13,7 +13,7 @@ export default {
     objectHash: String,
   },
   data() {
-    return {};
+    return {}
   },
   methods: {
     deleteOk() {
@@ -21,7 +21,7 @@ export default {
       store.commit('objectSelected', { selected: false })
     },
   },
-};
+}
 </script>
 
 <style lang="scss">

@@ -30,12 +30,12 @@
 </template>
 
 <script>
-import { Multipane, MultipaneResizer } from 'vue-multipane';
-import store from '@/store.js'
-import AddObject from './AddObject.vue';
-import AddRelation from './AddRelation.vue';
-import ObjectGraph from './ObjectGraph.vue';
-import ObjectDetails from './ObjectDetails.vue';
+import { Multipane, MultipaneResizer } from 'vue-multipane'
+import store from '@/store'
+import AddObject from './AddObject.vue'
+import AddRelation from './AddRelation.vue'
+import ObjectGraph from './ObjectGraph.vue'
+import ObjectDetails from './ObjectDetails.vue'
 
 export default {
   name: 'MainView',
@@ -49,17 +49,17 @@ export default {
   },
   data() {
     return {
-    };
+    }
   },
   computed: {
     showDetails() {
-      return this.objectSelected;
+      return this.objectSelected
     },
     objectSelected() {
-      return store.getters.objectSelected;
+      return store.getters.objectSelected
     },
   },
-};
+}
 </script>
 
 <style lang="scss">

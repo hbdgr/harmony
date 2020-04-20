@@ -1,5 +1,7 @@
 <template>
-  <b-modal v-model="modalShow" size="lg" :hide-header-close=true :ok-only=true :no-close-on-esc=true centered title="ERROR" @ok="Ok" no-stacking>
+  <b-modal v-model="modalShow"
+     size="lg" :hide-header-close=true :ok-only=true :no-close-on-esc=true
+     centered title="ERROR" @ok="Ok" no-stacking>
     {{error}}
   </b-modal>
 </template>
@@ -14,7 +16,7 @@ export default {
   data() {
     return {
       modalShow: false,
-    };
+    }
   },
   methods: {
     Ok() {
@@ -22,11 +24,11 @@ export default {
     },
   },
   watch: {
-    'error': function (val) {
-      if (val != '') {
+    error(val) {
+      if (val !== '') {
         this.modalShow = true
       }
     },
-  }
-};
+  },
+}
 </script>

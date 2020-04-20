@@ -6,7 +6,8 @@
       <b-container fluid style="max-width: 900px">
         <b-row>
           <!-- <b-col> -->
-          <!--   <b-form-input v-model="relation_definition" @keyup.enter="addObject" placeholder="Definicja relacji..." /> -->
+          <!--   <b-form-input v-model="relation_definition"
+            @keyup.enter="addObject" placeholder="Definicja relacji..." /> -->
           <!-- </b-col> -->
           <!-- <b-col> -->
           <!--   <b-form-input v-model="object1" @keyup.enter="addObject" placeholder="Objekt pierwszy..." /> -->
@@ -17,7 +18,10 @@
         </b-row>
         <b-row>
           <b-col>
-            <b-button class="add-button" v-b-toggle="'collapse-addrelation'" @click="addRelation" variant="secondary" style="float: left">Dodaj</b-button>
+            <b-button class="add-button" v-b-toggle="'collapse-addrelation'"
+              @click="addRelation" variant="secondary" style="float: left">
+              Dodaj
+            </b-button>
           </b-col>
           <b-col>
             <b-button class="add-button" @click="clear" variant="info" style="float: right">Wyczyść</b-button>
@@ -29,8 +33,8 @@
 </template>
 
 <script>
-import ErrorModal from '@/modals/ErrorModal.vue';
-import store from '@/store.js'
+import ErrorModal from '@/modals/ErrorModal.vue'
+import store from '@/store'
 // https://github.com/F-loat/vue-simplemde
 
 export default {
@@ -42,27 +46,27 @@ export default {
     return {
       content: '',
       storeError: '',
-    };
+    }
   },
   methods: {
     addRelation() {
-      if (this.content.length == 0) {
-        console.log("Trying to add empty obiect")
+      if (this.content.length === 0) {
+        console.log('Trying to add empty obiect')
         return
       }
 
-      store.dispatch('addRelation', {content: this.content}).then(res => {
-        console.log("Got object data")
-      }, err => {
+      store.dispatch('addRelation', { content: this.content }).then((res) => {
+        console.log('Got object data:', res)
+      }, (err) => {
         this.storeError = err.message
       })
       this.content = ''
     },
     clear() {
-      this.content = ""
+      this.content = ''
     },
   },
-};
+}
 </script>
 
 <style lang="scss">

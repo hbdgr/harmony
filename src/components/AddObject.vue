@@ -21,7 +21,10 @@
         </b-row>
         <b-row>
           <b-col>
-            <b-button class="add-button" v-b-toggle="'collapse-addobject'" @click="addObject" variant="secondary" style="float: left">Dodaj</b-button>
+            <b-button class="add-button" v-b-toggle="'collapse-addobject'"
+              @click="addObject" variant="secondary" style="float: left">
+              Dodaj
+            </b-button>
           </b-col>
           <b-col>
             <b-button class="add-button" @click="clear" variant="info" style="float: right">Wyczyść</b-button>
@@ -33,8 +36,8 @@
 </template>
 
 <script>
-import ErrorModal from '@/modals/ErrorModal.vue';
-import store from '@/store.js'
+import ErrorModal from '@/modals/ErrorModal.vue'
+import store from '@/store'
 // https://github.com/F-loat/vue-simplemde
 
 export default {
@@ -47,33 +50,33 @@ export default {
       objectType: 'PrimaryElement',
       content: '',
       storeError: '',
-    };
+    }
   },
   methods: {
     addObject() {
-      if (this.content.length == 0) {
-        console.log("Trying to add empty obiect")
+      if (this.content.length === 0) {
+        console.log('Trying to add empty obiect')
         return
       }
 
-      if (!["PrimaryElement", "RelationDefinition"].includes(this.objectType)) {
-        this.storeError = "Niezdefiniowany typ obiektu"
+      if (!['PrimaryElement', 'RelationDefinition'].includes(this.objectType)) {
+        this.storeError = 'Niezdefiniowany typ obiektu'
         return
       }
 
-      store.dispatch('addObject', {objectType: this.objectType, content: this.content}).then(res => {
-        console.log("Got object data")
-      }, err => {
+      store.dispatch('addObject', { objectType: this.objectType, content: this.content }).then((res) => {
+        console.log('Got object data:', res)
+      }, (err) => {
         this.storeError = err.message
       })
       this.content = ''
     },
     clear() {
-      this.content = ""
-      this.objectType = "PrimaryElement"
+      this.content = ''
+      this.objectType = 'PrimaryElement'
     },
   },
-};
+}
 </script>
 
 <style lang="scss">

@@ -10,9 +10,9 @@
 </template>
 
 <script>
-import store from '@/store.js'
-import DeleteModal from '@/modals/DeleteModal.vue';
-import SimpleObject from './SimpleObject.vue';
+import store from '@/store'
+import DeleteModal from '@/modals/DeleteModal.vue'
+import SimpleObject from './SimpleObject.vue'
 
 export default {
   name: 'ObjectGraph',
@@ -21,27 +21,27 @@ export default {
     SimpleObject,
   },
   data() {
-    return {};
+    return {}
   },
   created() {
-    store.dispatch('updateObjects');
+    store.dispatch('updateObjects')
   },
   computed: {
     objects() {
-      return store.getters.objects;
+      return store.getters.objects
     },
     objectsUpToDate() {
-      let upToDate = store.getters.objectsUpToDate;
+      const upToDate = store.getters.objectsUpToDate
       if (!upToDate) {
-        store.dispatch('updateObjects');
+        store.dispatch('updateObjects')
       }
-      return upToDate;
+      return upToDate
     },
     objectSelected() {
-      return store.getters.objectSelected;
+      return store.getters.objectSelected
     },
     selectedObjectHash() {
-      return store.state.objectHash;
+      return store.state.objectHash
     },
   },
   filters: {
@@ -52,7 +52,7 @@ export default {
       // store.commit('objectSelected', { selected: false })
     },
   },
-};
+}
 </script>
 
 <style lang="scss">

@@ -22,21 +22,21 @@
 </template>
 
 <script>
-import { MultipaneResizer } from 'vue-multipane';
-import store from '@/store.js'
+// import { MultipaneResizer } from 'vue-multipane'
+import store from '@/store'
 
 export default {
   name: 'ObjectDetails',
   components: {
-    MultipaneResizer,
+  // MultipaneResizer,
   },
   data() {
     return {
-    };
+    }
   },
   computed: {
     selectedObjectHash() {
-      return store.state.objectHash;
+      return store.state.objectHash
     },
     selectedObject() {
       return store.getters.objectByHash(this.selectedObjectHash)
@@ -47,7 +47,7 @@ export default {
       store.commit('objectSelected', { selected: false })
     },
   },
-};
+}
 </script>
 
 <style lang="scss">

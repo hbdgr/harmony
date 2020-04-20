@@ -1,12 +1,12 @@
-import axios from 'axios';
+import axios from 'axios'
 
 export default () => axios.create({
   baseURL: 'http://localhost:8000/',
   timeout: 10000,
   withCredentials: true,
-  transformRequest: [(data) => JSON.stringify(data)],
+  transformRequest: [data => JSON.stringify(data)],
   headers: {
-    'Accept': 'application/json',
+    Accept: 'application/json',
     'Content-Type': 'application/json',
   },
-});
+})

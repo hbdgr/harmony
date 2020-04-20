@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import store from '@/store.js'
+import store from '@/store'
 
 export default {
   name: 'SimpleObject',
@@ -20,26 +20,26 @@ export default {
   },
   computed: {
     selected() {
-      return store.getters.objectSelected;
+      return store.getters.objectSelected
     },
     theSameObjectSelected() {
       if (!this.selected) {
         return false
       }
-      return store.state.objectHash === this.object.hash;
+      return store.state.objectHash === this.object.hash
     },
     objectType() {
-      let objType = this.object.content.header.object_type
-      if (objType == "PrimaryElement") {
-        return "Primary"
+      const objType = this.object.content.header.object_type
+      if (objType === 'PrimaryElement') {
+        return 'Primary'
       }
 
       if (objType.RelationDefinition != null) {
-          return "Definition"
+        return 'Definition'
       }
 
-      return "unknown"
-    }
+      return 'unknown'
+    },
   },
   methods: {
     trashClicked() {
@@ -57,9 +57,9 @@ export default {
 
       store.commit('objectSelected', { selected: true })
       this.saveObjectHash()
-    }
+    },
   },
-};
+}
 </script>
 
 <style lang="scss">
