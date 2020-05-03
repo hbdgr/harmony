@@ -14,6 +14,9 @@ export default new Vuex.Store({
   },
   mutations: {
     objectSelected(state, payload) {
+      if (payload.selected === false) {
+        state.objectHash = ''
+      }
       state.selected = payload.selected
     },
     setObjectHash(state, payload) {

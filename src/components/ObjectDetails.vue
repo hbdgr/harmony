@@ -4,7 +4,8 @@
       <v-icon class="close" name="regular/window-close" scale="1.9"/>
     </button>
     <div class="object-details">
-      <h5> Hash: {{ selectedObjectHash }} </h5>
+      <h5> Hash: </h5>
+        {{ selectedObjectHash }}
       <hr>
       <h5>Title:</h5>
       <p>

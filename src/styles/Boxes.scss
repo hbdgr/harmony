@@ -34,23 +34,14 @@
   padding: 1%;
 }
 
-.whitebox {
-  align: center;
-  position: relative;
-
-  width: 99%;
-
-  color: white;
-}
-
 .collapsebox {
-  align: center;
+  @extend .darkbox;
+
+  padding: 10px;
+
   text-align: left;
+  font-size: 14px;
 
-  position: relative;
-
-  background-color: hsl(0, 0%, 20%);
-
-  height: auto;
-  width: auto;
+  color: hsl(0, 0%, 10%);
+  background-color: hsl(0, 0%, 75%);
 }

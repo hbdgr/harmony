@@ -19,13 +19,7 @@ export default {
     object: Object,
   },
   computed: {
-    selected() {
-      return store.getters.objectSelected
-    },
-    theSameObjectSelected() {
-      if (!this.selected) {
-        return false
-      }
+    theSameSelected() {
       return store.state.objectHash === this.object.hash
     },
     objectType() {
@@ -50,7 +44,7 @@ export default {
     },
     selectObject() {
       // unselect for double clicking the same object
-      if (this.theSameObjectSelected) {
+      if (this.theSameSelected) {
         store.commit('objectSelected', { selected: false })
         return
       }

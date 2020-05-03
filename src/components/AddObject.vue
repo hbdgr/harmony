@@ -1,18 +1,33 @@
 <template>
-  <div class="whitebox">
+  <div>
     <ErrorModal :error="storeError" v-on:closed="storeError = ''"/>
 
     <b-collapse id="collapse-addobject" class="mt-2 collapsebox">
-      <b-container fluid style="max-width: 900px">
+      <b-container fluid>
         <b-row>
-          <b-form-group label="Typ obiektu:">
+          <b-form-group label-size="lg" label="Typ obiektu:">
             <b-form-radio v-model="objectType" name="objType" value="PrimaryElement" default>
               Objekt Elementarny
             </b-form-radio>
+
             <b-form-radio v-model="objectType" name="objType" value="RelationDefinition">
               Definicja Relacji
             </b-form-radio>
+
+            <b-form-checkbox
+              id="directed-check"
+              v-model="directed"
+              name="directed-check"
+              value="directed"
+              style="margin-left: 25px"
+              unchecked-value="not_directed"
+              v-if="objectType === 'RelationDefinition'"
+            >
+              relacja skierowana
+            </b-form-checkbox>
+
           </b-form-group>
+
         </b-row>
         <b-row>
           <b-col>
@@ -22,14 +37,16 @@
         <b-row>
           <b-col>
             <b-button class="add-button" v-b-toggle="'collapse-addobject'"
-              @click="addObject" variant="secondary" style="float: left">
+              @click="addObject" variant="info" style="float: left">
               Dodaj
             </b-button>
           </b-col>
           <b-col>
-            <b-button class="add-button" @click="clear" variant="info" style="float: right">Wyczyść</b-button>
+            <b-button class="add-button" @click="clear" variant="secondary" style="float: right">Wyczyść</b-button>
           </b-col>
         </b-row>
+
+
       </b-container>
     </b-collapse>
   </div>
@@ -50,6 +67,7 @@ export default {
       objectType: 'PrimaryElement',
       content: '',
       storeError: '',
+      directed: '',
     }
   },
   methods: {
