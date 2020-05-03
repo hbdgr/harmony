@@ -2,7 +2,7 @@
   <div class="main-darkbox" @click="unselectObject">
     <DeleteModal :objectHash="selectedObjectHash"/>
     <div v-if="objectsUpToDate">
-      <div v-for="obj in objects" :key="obj.hash" class="column">
+      <div v-for="obj in primaryElements" :key="obj.hash" class="column">
         <SimpleObject :object="obj" />
       </div>
     </div>
@@ -27,8 +27,8 @@ export default {
     store.dispatch('updateObjects')
   },
   computed: {
-    objects() {
-      return store.getters.objects
+    primaryElements() {
+      return store.getters.primaryElements
     },
     objectsUpToDate() {
       const upToDate = store.getters.objectsUpToDate

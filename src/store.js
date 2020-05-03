@@ -42,6 +42,12 @@ export default new Vuex.Store({
     objects(state) {
       return state.objects
     },
+    primaryElements(state) {
+      return state.objects.filter(obj => (obj.content.header.object_type) === 'PrimaryElement')
+    },
+    definitions(state) {
+      return state.objects.filter(obj => Object.keys(obj.content.header.object_type)[0] === 'RelationDefinition')
+    },
     objectByHash: state => hash => state.objects.find(obj => obj.hash === hash),
   },
   actions: {

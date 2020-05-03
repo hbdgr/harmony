@@ -1,29 +1,31 @@
 <template>
   <div>
     <multipane class="custom-resizer" layout="vertical">
-    <ObjectDetails class="pane" v-if="showDetails" />
-    <multipane-resizer v-if="showDetails" />
-      <div class="mainpane pane" key="main">
-        <b-container style="border: 5">
-          <b-row>
-            <b-col>
-              <b-button v-b-toggle.collapse-addobject variant="primary" class="add-button">
-                Dodaj nowy obiekt
-              </b-button>
-            </b-col>
-            <b-col>
-              <b-button v-b-toggle.collapse-addrelation variant="primary" class="add-button">
-                Dodaj nową relację
-              </b-button>
-            </b-col>
-          </b-row>
-          <b-row>
-            <AddObject />
-            <AddRelation />
-          </b-row>
-        </b-container>
-        <ObjectGraph />
-      </div>
+      <ObjectDetails class="pane" v-if="showDetails" />
+      <multipane-resizer v-if="showDetails" />
+        <div class="mainpane pane" key="main">
+          <b-container style="border: 5">
+            <b-row>
+              <b-col>
+                <b-button v-b-toggle.collapse-addobject variant="primary" class="add-button">
+                  Dodaj nowy obiekt
+                </b-button>
+              </b-col>
+              <b-col>
+                <!-- <b-button v-b-toggle.collapse-addrelation variant="primary" class="add-button"> -->
+                <!--   Dodaj nową relację -->
+                <!-- </b-button> -->
+              </b-col>
+            </b-row>
+            <b-row>
+              <AddObject />
+              <AddRelation />
+            </b-row>
+          </b-container>
+          <ObjectGraph />
+        </div>
+      <multipane-resizer />
+        <DefinitionsSidebar />
     </multipane>
 
   </div>
@@ -36,6 +38,7 @@ import AddObject from './AddObject.vue'
 import AddRelation from './AddRelation.vue'
 import ObjectGraph from './ObjectGraph.vue'
 import ObjectDetails from './ObjectDetails.vue'
+import DefinitionsSidebar from './DefinitionsSidebar.vue'
 
 export default {
   name: 'MainView',
@@ -46,6 +49,7 @@ export default {
     ObjectDetails,
     Multipane,
     MultipaneResizer,
+    DefinitionsSidebar,
   },
   data() {
     return {
