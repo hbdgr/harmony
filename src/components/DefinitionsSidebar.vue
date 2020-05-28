@@ -1,6 +1,6 @@
 <template>
   <div class="darksidebar">
-    <h5><b> Definicje: </b></h5>
+    <h5><b> {{ $t('message.defs') }} </b></h5>
     <div v-if="objectsUpToDate">
       <b-list-group>
       <div v-for="def in definitions" :key="def.hash" class="column">

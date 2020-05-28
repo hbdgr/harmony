@@ -7,6 +7,7 @@ import router from './router'
 import store from './store'
 
 import VueI18n from 'vue-i18n'
+import messages from './lang';
 
 import 'vue-awesome/icons/trash'
 import 'vue-awesome/icons/regular/window-close'
@@ -19,19 +20,6 @@ Vue.use(NavbarPlugin)
 
 // import globally
 Vue.component('v-icon', Icon)
-
-const messages = {
-  en: {
-    message: {
-      about: 'en: This is an about page',
-    }
-  },
-  pl: {
-    message: {
-      about: 'Harmony to harmonia',
-    }
-  }
-}
 
 export const i18n = new VueI18n({
   locale: 'pl',

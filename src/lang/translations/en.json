@@ -1,0 +1,12 @@
+{
+	"word": {
+	  "home": "Home",
+	  "contact": "Contact",
+	  "about": "About",
+	  "search": "Search"
+	},
+	"message": {
+      "about": "Harmony is harmony",
+	  "defs": "Definitions"
+	}
+}

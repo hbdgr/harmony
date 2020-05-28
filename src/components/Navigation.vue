@@ -7,26 +7,28 @@
 
       <b-collapse id="nav-collapse" is-nav>
 
-        <b-navbar-nav>
+        <b-navbar-nav style="width: 300px">
           <b-nav-item href="#">
-            <router-link tag="li" to="/">Home</router-link>
+            <router-link tag="li" to="/"> {{ $t('word.home') }} </router-link>
           </b-nav-item>
           <b-nav-item href="#" disabled>
-            <router-link tag="li" to="/about">Contact</router-link>
+            <router-link tag="li" to="/about"> {{ $t('word.contact') }}  </router-link>
           </b-nav-item>
           <b-nav-item href="#">
-            <router-link tag="li" to="/about">About</router-link>
+            <router-link tag="li" to="/about"> {{ $t('word.about') }}  </router-link>
           </b-nav-item>
         </b-navbar-nav>
 
         <!-- Right aligned nav items -->
-        <b-navbar-nav class="ml-auto">
+        <b-navbar-nav class="mx-auto">
           <b-nav-form>
           <b-button v-b-toggle.collapse-addobject class="bg-info mr-sm-2" size="sm"> + </b-button>
           </b-nav-form>
           <b-nav-form>
-            <b-form-input id="navsearch" size="sm" class="mr-sm-2" placeholder="Search"></b-form-input>
-            <b-button id="navbutton" size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>
+            <b-form-input id="navsearch" size="sm" class="mr-sm-2" v-bind:placeholder="$t('word.search') "></b-form-input>
+            <b-button id="navbutton" size="sm" class="my-2 my-sm-0" type="submit">
+              {{ $t('word.search') }}
+            </b-button>
           </b-nav-form>
         </b-navbar-nav>
 
