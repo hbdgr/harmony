@@ -33,9 +33,11 @@
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
           <b-nav-item-dropdown text="Lang" right>
-            <b-dropdown-item href="#">PL</b-dropdown-item>
-            <b-dropdown-item href="#">EN</b-dropdown-item>
-            <b-dropdown-item href="#">RU</b-dropdown-item>
+              <option v-for="(lang, i) in langs" :key="`lang-${i}`" :value="lang">
+                <b-dropdown-item @click="langSelected=lang" href="#">
+                  {{ lang.toUpperCase() }}
+                </b-dropdown-item>
+              </option>
           </b-nav-item-dropdown>
 
           <b-nav-item-dropdown right>
@@ -53,7 +55,21 @@
 </template>
 
 <script>
+import { i18n } from "../main.js";
+
 export default {
   name: 'Navigation',
+  data() {
+    return {
+      langs: ['pl','en'],
+      langSelected: 'pl',
+    }
+  },
+  watch: {
+    langSelected: function(value) {
+      console.log("Language change to:", value)
+      i18n.locale = value
+    }
+  },
 }
 </script>
