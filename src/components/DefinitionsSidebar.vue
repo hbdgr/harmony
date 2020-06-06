@@ -7,7 +7,7 @@
         <div @click="selectObject(def.hash)">
           <b-list-group-item
             class="d-flex justify-content-between align-items-center" variant="dark"> {{ def.content.body }}
-            <b-badge variant="info" pill>0</b-badge>
+            <b-badge class="blue-glow" pill>0</b-badge>
           </b-list-group-item>
         </div>
       </div>

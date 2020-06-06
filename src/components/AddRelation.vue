@@ -24,7 +24,7 @@
             </b-button>
           </b-col>
           <b-col>
-            <b-button class="add-button" @click="clear" variant="info" style="float: right">Wyczyść</b-button>
+            <b-button class="add-button blue-glow" @click="clear" style="float: right">Wyczyść</b-button>
           </b-col>
         </b-row>
       </b-container>

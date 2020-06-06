@@ -22,7 +22,7 @@
         <!-- Right aligned nav items -->
         <b-navbar-nav class="mx-auto">
           <b-nav-form>
-          <b-button v-b-toggle.collapse-addobject class="bg-info mr-sm-2" size="sm"> + </b-button>
+          <b-button v-b-toggle.collapse-addobject class="mr-sm-2 blue-glow" size="sm"> + </b-button>
           </b-nav-form>
           <b-nav-form>
             <b-form-input id="navsearch" size="sm" class="mr-sm-2" v-bind:placeholder="$t('word.search') "></b-form-input>

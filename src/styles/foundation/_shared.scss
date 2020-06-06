@@ -1,0 +1,21 @@
+// fonts
+$stack: 'Avenir', Helvetica, Arial, sans-serif;
+$primary-color: white;
+$font-small: 14px;
+
+// colors
+$darkest-gray: hsl(0, 0, 10%);
+$dark-gray: hsl(0, 0, 20%);
+$mid-gray: hsl(0, 0, 60%);
+$light-gray: hsl(0, 0, 80%);
+$lightest-gray: hsl(0, 0, 90%);
+
+$red-trash: hsl(0, 90%, 35%);
+$red-light: hsl(0, 90%, 75%);
+
+$blue-glow: hsla(215%, 80%, 30%, 0.85);
+
+.blue-glow {
+  background-color: $blue-glow;
+  border-color: $darkest-gray;
+}

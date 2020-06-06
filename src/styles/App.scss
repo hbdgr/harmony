@@ -1,6 +1,7 @@
 @import 'node_modules/bootstrap/scss/bootstrap';
 @import 'node_modules/bootstrap-vue/src/index.scss';
 
+@import 'foundation/shared';
 
 body {
   display: flex;
@@ -8,7 +9,7 @@ body {
 }
 
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: $stack;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -22,23 +23,20 @@ body {
 
   a {
     font-weight: bold;
-    // color: hsl(0, 0%, 95%);
     &.router-link-exact-active {
-      // color: hsl(0, 0%, 35%);
     }
   }
 }
 
 li {
   a {
-    // text-decoration: none;
+    text-decoration: none;
   }
 }
 
 #navbar {
   height: 50px;
-  // color: hsl(0, 0%, 15%);
-  background-color: hsl(0, 0%, 20%);
+  background-color: $darkest-gray;
 }
 
 #navsearch {

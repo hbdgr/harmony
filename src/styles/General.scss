@@ -1,3 +1,5 @@
+@import 'foundation/shared';
+
 div {
   padding: 2px 2px 2px 2px;
 }
@@ -13,14 +15,14 @@ div {
 .boxed {
   position: relative;
   padding: 10px 20px 20px 5px;
-  margin: 1px auto 0px auto;
+  margin: 1px auto 0 auto;
 
-  width: 550px;
+  width: 650px;
   border: 2px solid Black;
 
-  background-color: hsl(0, 0%, 10%);
-  color: white;
-  font-family: verdana;
+  background-color: $darkest-gray;
+  color: $primary-color;
+  font-family: $stack;
 }
 
 .boxedIdx {
@@ -30,10 +32,10 @@ div {
   top: 0;
   left: 0;
   width: 100%;
-  height: 20px;
+  height: 24px;
 
-  background-color: hsl(0, 0%, 15%);
-  font-size: 11px;
+  background-color: $blue-glow;
+  font-size: $font-small;
 }
 
 .closeBox {
@@ -48,11 +50,11 @@ div {
   width: 30px;
   height: 25px;
 
-  background-color: #eee;
+  background-color: $lightest-gray;
 }
 
 .closeBox:hover {
-  background-color: #eee;
+  background-color: $lightest-gray;
 }
 
 .trashBox {
@@ -63,29 +65,29 @@ div {
   bottom: 10px;
   right: 0;
 
-  background-color: hsl(0%, 0%, 10%);
+  background-color: $darkest-gray;
   border: 0;
   width: 18px;
   height: 20px;
 }
 
 .trashBox:hover {
-  background-color: hsl(0%, 0%, 10%);
+  background-color: $darkest-gray;
 }
 
 .trash {
-  color: hsl(0%, 90%, 35%);
+  color: $red-trash;
 }
 
 // make animation
 .trash:hover {
-  color: hsl(0%, 90%, 75%) !important;
+  color: $red-light !important;
   animation: color_change 3s;
 }
 
 .contentText {
   margin: 15px auto auto 10px;
   padding: 0px 0px 0px 15px;
-  font-size: 14px;
+  font-size: $font-small;
   text-align: left;
 }

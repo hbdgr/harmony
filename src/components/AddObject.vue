@@ -36,8 +36,8 @@
         </b-row>
         <b-row>
           <b-col>
-            <b-button class="add-button" v-b-toggle="'collapse-addobject'"
-              @click="addObject" variant="info" style="float: left">
+            <b-button class="add-button blue-glow" v-b-toggle="'collapse-addobject'"
+              @click="addObject" style="float: left">
               Dodaj
             </b-button>
           </b-col>

@@ -1,3 +1,5 @@
+@import 'foundation/shared';
+
 .darkbox {
   align: center;
   padding: 5px;
@@ -7,10 +9,10 @@
   margin: 5px auto 5px auto;
 
   color: white;
-  font-family: verdana;
-  font-size: 16px;
+  font-family: $stack;
+  font-size: $font-small;
 
-  background-color: hsl(0, 0%, 20%);
+  background-color: $dark-gray;
 }
 
 .main-darkbox {
@@ -40,8 +42,8 @@
   padding: 10px;
 
   text-align: left;
-  font-size: 14px;
+  font-size: $font-small;
 
-  color: hsl(0, 0%, 10%);
-  background-color: hsl(0, 0%, 75%);
+  color: $darkest-gray;
+  background-color: $light-gray;
 }

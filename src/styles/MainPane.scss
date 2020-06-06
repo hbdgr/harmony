@@ -1,3 +1,5 @@
+@import 'foundation/shared';
+
 .details-pane {
   width: 500px;
   min-width: 20%;
@@ -23,8 +25,8 @@
   text-align: center;
   padding: 10px;
   overflow: hidden;
-  background: #eee;
-  border: 1px solid #ccc;
+  background: $lightest-gray;
+  border: 1px solid $light-gray;
 }
 
 .custom-resizer > .pane ~ .pane {
@@ -43,12 +45,12 @@
     left: 50%;
     margin-top: -20px;
     margin-left: -1.5px;
-    border-left: 1px solid #ccc;
-    border-right: 1px solid #ccc;
+    border-left: 1px solid $light-gray;
+    border-right: 1px solid $light-gray;
   }
   &:hover {
     &:before {
-      border-color: #999;
+      border-color: $mid-gray;
     }
   }
 }
