@@ -1,7 +1,9 @@
 // fonts
 $stack: 'Avenir', Helvetica, Arial, sans-serif;
+$stack-monospace: 'Courier New', Courier, monospace;
 $primary-color: white;
 $font-small: 14px;
+$font-smaller: 12px;
 
 // colors
 $darkest-gray: hsl(0, 0, 10%);
@@ -19,3 +21,8 @@ $blue-glow: hsla(215%, 80%, 30%, 0.85);
   background-color: $blue-glow;
   border-color: $darkest-gray;
 }
+
+// border
+$b-rad: 8px;
+$b-rad-top: $b-rad $b-rad 0 0;
+$b-rad-bottom: 0 0 $b-rad $b-rad;

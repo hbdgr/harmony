@@ -1,17 +1,26 @@
 <template>
   <div>
-    <multipane class="custom-resizer" layout="vertical">
-      <ObjectDetails class="pane" v-if="showDetails" />
-      <multipane-resizer v-if="showDetails" />
-        <div class="mainpane pane dorkbox" key="main">
-          <!-- <AddRelation /> -->
-          <AddObject />
-          <ObjectGraph />
-        </div>
-      <multipane-resizer />
+    <b-container fluid>
+      <b-row>
+        <b-col>
+          <ObjectDetails v-if="showDetails" />
+        </b-col>
+        <b-col class="main-backbox" md="5">
+          <b-row>
+            <!-- <AddRelation /> -->
+            <AddObject />
+          </b-row>
+          <b-row>
+            <div class="centered" key="main">
+              <ObjectGraph />
+            </div>
+          </b-row>
+        </b-col>
+        <b-col>
         <DefinitionsSidebar />
-    </multipane>
-
+        </b-col>
+      </b-row>
+    </b-container>
   </div>
 </template>
 
@@ -51,6 +60,5 @@ export default {
 </script>
 
 <style lang="scss">
-  @import '../styles/MainPane.scss';
   @import '../styles/Boxes.scss';
 </style>

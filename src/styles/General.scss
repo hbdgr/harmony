@@ -10,69 +10,14 @@ div {
 
 .object-details {
   text-align: left;
+
+  font-family: $stack-monospace;
+  font-size: $font-smaller;
 }
 
-.boxed {
-  position: relative;
-  padding: 10px 20px 20px 5px;
-  margin: 1px auto 0 auto;
-
-  width: 650px;
-  border: 2px solid Black;
-
-  background-color: $darkest-gray;
-  color: $primary-color;
-  font-family: $stack;
-}
-
-.boxedIdx {
-  padding: 2px 4px 6px 4px;
-
-  position: absolute;
-  top: 0;
-  left: 0;
+.centered {
+  align-items: center;
   width: 100%;
-  height: 24px;
-
-  background-color: $blue-glow;
-  font-size: $font-small;
-}
-
-.closeBox {
-  margin: 5px;
-  padding: 0px 0px 30px 0px;
-
-  position: absolute;
-  top: 0;
-  right: 0;
-
-  border: 0;
-  width: 30px;
-  height: 25px;
-
-  background-color: $lightest-gray;
-}
-
-.closeBox:hover {
-  background-color: $lightest-gray;
-}
-
-.trashBox {
-  margin: 2px;
-  padding: 1px;
-
-  position: absolute;
-  bottom: 10px;
-  right: 0;
-
-  background-color: $darkest-gray;
-  border: 0;
-  width: 18px;
-  height: 20px;
-}
-
-.trashBox:hover {
-  background-color: $darkest-gray;
 }
 
 .trash {
@@ -85,9 +30,3 @@ div {
   animation: color_change 3s;
 }
 
-.contentText {
-  margin: 15px auto auto 10px;
-  padding: 0px 0px 0px 15px;
-  font-size: $font-small;
-  text-align: left;
-}

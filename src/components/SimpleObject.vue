@@ -1,12 +1,16 @@
 <template>
-  <div class="boxed" @click="selectObject">
-    <div class="boxedIdx">
-      [{{ objectType }}] {{ object.hash }}
+  <div class="box" @click="selectObject">
+    <div class="box-header">
+      {{ object.hash }}
     </div>
-    <button class="trashBox" @click.stop="trashClicked" v-b-modal.delete-modal>
-      <v-icon class="trash" name="trash" scale="0.9" />
-    </button>
-    <p class="contentText">{{ object.content.body }}</p>
+
+    <p class="box-content">{{ object.content.body }}</p>
+
+    <div class="box-footer" >
+      <button class="box-trash" @click.stop="trashClicked" v-b-modal.delete-modal>
+        <v-icon class="trash" name="trash" scale="0.9" />
+      </button>
+    </div>
   </div>
 </template>
 
@@ -57,5 +61,5 @@ export default {
 </script>
 
 <style lang="scss">
-  @import '../styles/General.scss';
+  @import '../styles/Boxes.scss';
 </style>

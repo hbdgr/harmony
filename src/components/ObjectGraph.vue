@@ -1,5 +1,5 @@
 <template>
-  <div class="main-darkbox" @click="unselectObject">
+  <div @click="unselectObject">
     <DeleteModal :objectHash="selectedObjectHash"/>
     <div v-if="objectsUpToDate">
       <div v-for="obj in primaryElements" :key="obj.hash" class="column">

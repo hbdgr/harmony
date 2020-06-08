@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button class="closeBox" @click="close">
+    <button class="details-close" @click="close">
       <v-icon class="close" name="regular/window-close" scale="1.9"/>
     </button>
     <div class="object-details">
