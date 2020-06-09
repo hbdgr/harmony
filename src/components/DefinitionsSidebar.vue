@@ -1,12 +1,15 @@
 <template>
-  <div class="darksidebar">
+  <div class="rightside-fixedbox">
     <h5><b> {{ $t('message.defs') }} </b></h5>
     <div v-if="objectsUpToDate">
       <b-list-group>
       <div v-for="def in definitions" :key="def.hash" class="column">
-        <div @click="selectObject(def.hash)">
+        <div class="definitions-box" @click="selectObject(def.hash)">
           <b-list-group-item
-            class="d-flex justify-content-between align-items-center" variant="dark"> {{ def.content.body }}
+            class="d-flex justify-content-between align-items-center" variant="dark">
+              <div class="definition-box">
+                {{ def.content.body }}
+              </div>
             <b-badge class="blue-glow" pill>0</b-badge>
           </b-list-group-item>
         </div>

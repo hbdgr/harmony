@@ -1,17 +1,53 @@
 <template>
-  <div class="home">
-    <MainView />
+  <div id="home">
+    <b-container fluid>
+      <b-row>
+        <b-col class="ml-auto mr-0" md=2>
+          <UserSidebar />
+          <!-- <ObjectDetails v-if="showDetails" /> -->
+        </b-col>
+
+        <b-col class="mx-1 mt-2 main-backbox" md=5>
+          <MainView />
+        </b-col>
+
+        <b-col class="mr-auto ml-2" md=2>
+          <DefinitionsSidebar />
+        </b-col>
+      </b-row>
+    </b-container>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import MainView from '@/components/MainView.vue'
+import store from '@/store'
+import MainView from '@/views/MainView.vue'
+import ObjectDetails from '@/modals/ObjectDetails.vue'
+import UserSidebar from '@/components/UserSidebar.vue'
+import DefinitionsSidebar from '@/components/DefinitionsSidebar.vue'
 
 export default {
-  name: 'home',
+  name: 'Home',
   components: {
     MainView,
+    ObjectDetails,
+    UserSidebar,
+    DefinitionsSidebar,
+  },
+  computed: {
+    showDetails() {
+      return this.objectSelected
+    },
+    objectSelected() {
+      return store.getters.objectSelected
+    },
   },
 }
 </script>
+
+<style lang="scss">
+  @import '../styles/Boxes.scss';
+  @import '../styles/General.scss';
+  @import '../styles/App.scss';
+</style>

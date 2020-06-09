@@ -13,14 +13,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  // background: $lightest-gray;
   height: 100%;
   min-height: 100%;
 }
 
 #nav {
-  margin: -2px;
-  padding: 0;
+
+  padding: 0 2px 50px 2px;
 
   a {
     font-weight: bold;
@@ -46,6 +45,10 @@ li {
 }
 
 #navbutton {
-  width: 100px;
+  width: 70px;
   height: 30px;
+}
+
+#home {
+  background: $mid-gray;
 }

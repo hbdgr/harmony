@@ -1,8 +1,6 @@
 <template>
-  <div>
-    <ErrorModal :error="storeError" v-on:closed="storeError = ''"/>
-
-    <b-collapse id="collapse-addobject" class="mt-2 collapsebox">
+    <b-collapse id="collapse-addobject" class="mt-2 addobject-box">
+      <ErrorModal :error="storeError" v-on:closed="storeError = ''"/>
       <b-container fluid>
         <b-row>
           <b-form-group label-size="lg" label="Typ obiektu:">
@@ -45,11 +43,8 @@
             <b-button class="add-button" @click="clear" variant="secondary" style="float: right">Wyczyść</b-button>
           </b-col>
         </b-row>
-
-
       </b-container>
     </b-collapse>
-  </div>
 </template>
 
 <script>

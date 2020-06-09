@@ -1,13 +1,12 @@
 <template>
   <div id="nav">
-    <b-navbar id="navbar" toggleable="lg" type="dark">
-      <b-navbar-brand href="#">Harmony</b-navbar-brand>
-
-      <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-
+    <b-navbar id="navbar" toggleable="lg" type="dark" fixed="top">
       <b-collapse id="nav-collapse" is-nav>
+        <b-navbar-brand class="ml-auto" href="#">Harmony</b-navbar-brand>
 
-        <b-navbar-nav style="width: 300px">
+        <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+
+        <b-navbar-nav  class="ml-0" style="width: 300px">
           <b-nav-item href="#">
             <router-link tag="li" to="/"> {{ $t('word.home') }} </router-link>
           </b-nav-item>
@@ -19,8 +18,7 @@
           </b-nav-item>
         </b-navbar-nav>
 
-        <!-- Right aligned nav items -->
-        <b-navbar-nav class="mx-auto">
+        <b-navbar-nav class="mx-5">
           <b-nav-form>
           <b-button v-b-toggle.collapse-addobject class="mr-sm-2 blue-glow" size="sm"> + </b-button>
           </b-nav-form>
@@ -32,9 +30,8 @@
           </b-nav-form>
         </b-navbar-nav>
 
-        <!-- Right aligned nav items -->
-        <b-navbar-nav class="ml-auto">
-          <b-nav-item-dropdown text="Lang" right>
+        <b-navbar-nav class="ml-auto mr-auto">
+          <b-nav-item-dropdown text="Lang">
               <option v-for="(lang, i) in langs" :key="`lang-${i}`" :value="lang">
                 <b-dropdown-item @click="langSelected=lang" href="#">
                   {{ lang.toUpperCase() }}
@@ -42,7 +39,7 @@
               </option>
           </b-nav-item-dropdown>
 
-          <b-nav-item-dropdown right>
+          <b-nav-item-dropdown>
             <!-- Using 'button-content' slot -->
             <template slot="button-content"><em>User</em></template>
             <b-dropdown-item href="#">Profile</b-dropdown-item>
@@ -75,3 +72,6 @@ export default {
   },
 }
 </script>
+<style lang="scss">
+  @import '../styles/General.scss';
+</style>
