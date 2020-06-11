@@ -3,9 +3,16 @@
 	  "home": "Home",
 	  "contact": "Contact",
 	  "about": "About",
-	  "search": "Search"
+	  "search": "Search",
+	  "type": "Type",
+	  "content": "Content"
+	},
+	"title":{
+		"delete_me": "DELETE ME"
 	},
 	"message": {
+	  "delete_object": "Are you sure, you want to delete this object?",
+	  "object_details": "Object Details",
       "about": "Harmony is harmony",
 	  "defs": "Definitions"
 	}

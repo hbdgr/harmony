@@ -1,17 +1,18 @@
 <template>
   <b-modal id=object-details class="object-details-box" size="lg"
-    :hide-header-close=true centered title="Object Details:"
+    :hide-header-close=true
+    centered :title="$t('message.object_details')+':'"
     @ok="close" @hidden="close"
-    no-stacking ok-only>
+    no-stacking ok-only >
     <h6> Hash: </h6>
       {{ objectHash }}
     <hr>
-    <h6>Type:</h6>
+    <h6> {{ $t('word.type')}}: </h6>
     <p>
       {{ objectType() }}
     </p>
     <hr>
-    <h6>Content:</h6>
+    <h6> {{ $t('word.content') }}: </h6>
     <p>
       {{ objectContent() }}
     </p>

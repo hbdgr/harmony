@@ -3,9 +3,16 @@
 	  "home": "Strona Główna",
 	  "contact": "Kontakt",
 	  "about": "Projekt",
-	  "search": "Szukaj"
+	  "search": "Szukaj",
+	  "type": "Typ",
+	  "content": "Treść"
+	},
+	"title":{
+		"delete_me": "USUŃ MNIE"
 	},
 	"message": {
+	  "delete_object": "Czy jesteś pewien, że chcesz usunąć ten obiekt?",
+	  "object_details": "Szegóły Obiektu",
 	  "about": "Harmony to harmonia",
 	  "defs": "Definicje"
 	}

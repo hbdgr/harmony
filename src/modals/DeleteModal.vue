@@ -1,6 +1,7 @@
 <template>
-  <b-modal id=delete-modal size="lg" :hide-header-close=true centered title="USUŃ MNIE" @ok="deleteOk" no-stacking>
-    Czy jesteś pewien, że chcesz usunąć ten obiekt? (hash={{objectHash}})
+  <b-modal id=delete-modal size="lg" :hide-header-close=true
+    centered :title="$t('title.delete_me')" @ok="deleteOk" no-stacking>
+    {{ $t('message.delete_object') }} (hash={{objectHash}})
   </b-modal>
 </template>
 
