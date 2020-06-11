@@ -21,12 +21,28 @@
 }
 
 .trash {
+  position: absolute;
+  right: 50px;
+  bottom: 8px;
+
   color: $red-trash;
 }
 
-// make animation
 .trash:hover {
   color: $red-light !important;
+  animation: color_change 3s;
+}
+
+.info-circle {
+  position: absolute;
+  left: 50px;
+  bottom: 8px;
+
+  color: $blue-info;
+}
+
+.info-circle:hover {
+  color: $blue-light !important;
   animation: color_change 3s;
 }
 

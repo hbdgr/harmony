@@ -1,3 +1,6 @@
+// nav
+$nav-height: 51px;
+
 // fonts
 $stack: 'Avenir', Helvetica, Arial, sans-serif;
 $stack-monospace: 'Courier New', Courier, monospace;
@@ -12,10 +15,13 @@ $mid-gray: hsl(0, 0, 55%);
 $light-gray: hsl(0, 0, 75%);
 $lightest-gray: hsl(0, 0, 90%);
 
-$red-trash: hsl(0, 90%, 35%);
-$red-light: hsl(0, 90%, 75%);
+$red-trash: hsl(0, 70, 35);
+$red-light: hsl(0, 70, 75);
 
-$blue-glow: hsla(215%, 80%, 30%, 0.85);
+$blue-info: hsl(240, 90, 35);
+$blue-light: hsl(240, 90, 75);
+
+$blue-glow: hsla(215, 80, 30, 0.85);
 
 .blue-glow {
   background-color: $blue-glow;

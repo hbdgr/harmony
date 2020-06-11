@@ -4,7 +4,6 @@
       <b-row>
         <b-col class="ml-auto mr-0" md=2>
           <UserSidebar />
-          <!-- <ObjectDetails v-if="showDetails" /> -->
         </b-col>
 
         <b-col class="mx-1 mt-2 main-backbox" md=5>
@@ -34,14 +33,6 @@ export default {
     ObjectDetails,
     UserSidebar,
     DefinitionsSidebar,
-  },
-  computed: {
-    showDetails() {
-      return this.objectSelected
-    },
-    objectSelected() {
-      return store.getters.objectSelected
-    },
   },
 }
 </script>

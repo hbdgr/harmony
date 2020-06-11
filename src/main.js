@@ -10,6 +10,7 @@ import VueI18n from 'vue-i18n'
 import messages from './lang';
 
 import 'vue-awesome/icons/trash'
+import 'vue-awesome/icons/info-circle'
 import 'vue-awesome/icons/regular/window-close'
 
 Vue.use(VueI18n)

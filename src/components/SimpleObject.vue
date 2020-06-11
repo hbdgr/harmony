@@ -7,9 +7,11 @@
     <p class="box-content">{{ object.content.body }}</p>
 
     <div class="box-footer" >
-      <button class="box-trash" @click.stop="trashClicked" v-b-modal.delete-modal>
-        <v-icon class="trash" name="trash" scale="0.9" />
-      </button>
+      <v-icon class="info-circle" name="info-circle" scale="1.7"
+        @click.stop="infoClicked" v-b-modal.object-details />
+
+      <v-icon class="trash" name="trash" scale="1.7"
+        @click.stop="trashClicked" v-b-modal.delete-modal />
     </div>
   </div>
 </template>
@@ -40,8 +42,11 @@ export default {
     },
   },
   methods: {
+    infoClicked() {
+      this.selectObject()
+    },
     trashClicked() {
-      this.saveObjectHash()
+      this.selectObject()
     },
     saveObjectHash() {
       store.commit('setObjectHash', { hash: this.object.hash })
@@ -62,4 +67,5 @@ export default {
 
 <style lang="scss">
   @import '../styles/Boxes.scss';
+  @import '../styles/General.scss';
 </style>

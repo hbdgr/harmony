@@ -51,7 +51,9 @@ export default new Vuex.Store({
     definitions(state) {
       return state.objects.filter(obj => Object.keys(obj.content.header.object_type)[0] === 'RelationDefinition')
     },
-    objectByHash: state => hash => state.objects.find(obj => obj.hash === hash),
+    objectByHash: (state) => (hash) => {
+      return state.objects.find(obj => obj.hash === hash)
+    }
   },
   actions: {
     async updateObjects({ commit, state }) {

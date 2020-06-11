@@ -1,6 +1,8 @@
 <template>
   <div @click="unselectObject">
-    <DeleteModal :objectHash="selectedObjectHash"/>
+    <DeleteModal :objectHash="selectedObjectHash" />
+    <ObjectDetails :objectHash="selectedObjectHash" />
+
     <div v-if="objectsUpToDate">
       <div v-for="obj in primaryElements" :key="obj.hash" class="column">
         <SimpleObject :object="obj" />
@@ -12,12 +14,14 @@
 <script>
 import store from '@/store'
 import DeleteModal from '@/modals/DeleteModal.vue'
+import ObjectDetails from '@/modals/ObjectDetails.vue'
 import SimpleObject from './SimpleObject.vue'
 
 export default {
   name: 'ObjectGraph',
   components: {
     DeleteModal,
+    ObjectDetails,
     SimpleObject,
   },
   data() {
