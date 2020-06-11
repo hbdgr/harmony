@@ -1,17 +1,15 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
-
 import DataApi from '@/services/DataApi'
 
-Vue.use(Vuex)
+export const elements = {
+  namespaced: true,
 
-export default new Vuex.Store({
-  state: {
+  state: () => ({
     selected: false,
     objectsUpToDate: false,
     objects: [],
     objectHash: '',
-  },
+  }),
+
   mutations: {
     objectSelected(state, payload) {
       if (payload.selected === false) {
@@ -35,6 +33,7 @@ export default new Vuex.Store({
       state.objects = state.objects.filter(obj => obj.hash !== payload.objectHash)
     },
   },
+
   getters: {
     objectSelected(state) {
       return state.selected
@@ -55,6 +54,7 @@ export default new Vuex.Store({
       return state.objects.find(obj => obj.hash === hash)
     }
   },
+
   actions: {
     async updateObjects({ commit, state }) {
       if (!state.objectsUpToDate) {
@@ -99,5 +99,5 @@ export default new Vuex.Store({
     },
     // addRelation({ commit, state }, payload) {
     // },
-  },
-})
+  }
+}

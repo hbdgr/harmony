@@ -26,7 +26,7 @@ export default {
   },
   computed: {
     theSameSelected() {
-      return store.state.objectHash === this.object.hash
+      return store.state.elements.objectHash === this.object.hash
     },
     objectType() {
       const objType = this.object.content.header.object_type
@@ -49,16 +49,16 @@ export default {
       this.selectObject()
     },
     saveObjectHash() {
-      store.commit('setObjectHash', { hash: this.object.hash })
+      store.commit('elements/setObjectHash', { hash: this.object.hash })
     },
     selectObject() {
       // unselect for double clicking the same object
       if (this.theSameSelected) {
-        store.commit('objectSelected', { selected: false })
+        store.commit('elements/objectSelected', { selected: false })
         return
       }
 
-      store.commit('objectSelected', { selected: true })
+      store.commit('elements/objectSelected', { selected: true })
       this.saveObjectHash()
     },
   },

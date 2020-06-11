@@ -34,7 +34,7 @@ export default {
   },
   computed: {
    selectedObject() {
-     return store.getters.objectByHash(this.objectHash)
+     return store.getters['elements/objectByHash'](this.objectHash)
    },
   },
   methods: {
@@ -55,7 +55,7 @@ export default {
       return content
     },
     close() {
-      store.commit('objectSelected', { selected: false })
+      store.commit('elements/objectSelected', { selected: false })
     },
   },
 }

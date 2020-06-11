@@ -55,7 +55,7 @@ export default {
         return
       }
 
-      store.dispatch('addRelation', { content: this.content }).then((res) => {
+      store.dispatch('elements/addRelation', { content: this.content }).then((res) => {
         console.log('Got object data:', res)
       }, (err) => {
         this.storeError = err.message

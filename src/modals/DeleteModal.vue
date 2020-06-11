@@ -18,8 +18,8 @@ export default {
   },
   methods: {
     deleteOk() {
-      store.dispatch('deleteObject', { objectHash: this.objectHash })
-      store.commit('objectSelected', { selected: false })
+      store.dispatch('elements/deleteObject', { objectHash: this.objectHash })
+      store.commit('elements/objectSelected', { selected: false })
     },
   },
 }

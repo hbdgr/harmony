@@ -77,7 +77,7 @@ export default {
         return
       }
 
-      store.dispatch('addObject', { objectType: this.objectType, content: this.content }).then((res) => {
+      store.dispatch('elements/addObject', { objectType: this.objectType, content: this.content }).then((res) => {
         console.log('Got object data:', res)
       }, (err) => {
         this.storeError = err.message

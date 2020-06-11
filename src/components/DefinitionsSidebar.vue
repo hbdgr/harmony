@@ -26,31 +26,31 @@ export default {
   name: 'DefinitionsSidebar',
   computed: {
     definitions() {
-      return store.getters.definitions
+      return store.getters['elements/definitions']
     },
     objectsUpToDate() {
-      const upToDate = store.getters.objectsUpToDate
+      const upToDate = store.getters['elements/objectsUpToDate']
       if (!upToDate) {
-        store.dispatch('updateObjects')
+        store.dispatch('elements/updateObjects')
       }
       return upToDate
     },
   },
   methods: {
     theSameSelected(hash) {
-      return store.state.objectHash === hash
+      return store.state.elements.objectHash === hash
     },
     saveObjectHash(hash) {
-      store.commit('setObjectHash', { hash })
+      store.commit('elements/setObjectHash', { hash })
     },
     selectObject(hash) {
       // unselect for double clicking the same object
       if (this.theSameSelected(hash)) {
-        store.commit('objectSelected', { selected: false })
+        store.commit('elements/objectSelected', { selected: false })
         return
       }
 
-      store.commit('objectSelected', { selected: true })
+      store.commit('elements/objectSelected', { selected: true })
       this.saveObjectHash(hash)
     },
   },
