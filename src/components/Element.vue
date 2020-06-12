@@ -1,10 +1,10 @@
 <template>
-  <div class="box" @click="selectObject">
+  <div class="box" @click="selectElement">
     <div class="box-header">
-      {{ object.hash }}
+      {{ element.hash }}
     </div>
 
-    <p class="box-content">{{ object.content.body }}</p>
+    <p class="box-content">{{ element.content.body }}</p>
 
     <div class="box-footer" >
       <v-icon class="info-circle" name="info-circle" scale="1.7"
@@ -20,16 +20,16 @@
 import store from '@/store'
 
 export default {
-  name: 'SimpleObject',
+  name: 'SimpleElement',
   props: {
-    object: Object,
+    element: Object,
   },
   computed: {
     theSameSelected() {
-      return store.state.elements.objectHash === this.object.hash
+      return store.state.elements.objectHash === this.element.hash
     },
     objectType() {
-      const objType = this.object.content.header.object_type
+      const objType = this.element.content.header.object_type
       if (objType === 'PrimaryElement') {
         return 'Primary'
       }
@@ -43,16 +43,16 @@ export default {
   },
   methods: {
     infoClicked() {
-      this.selectObject()
+      this.selectElement()
     },
     trashClicked() {
-      this.selectObject()
+      this.selectElement()
     },
     saveObjectHash() {
-      store.commit('elements/setObjectHash', { hash: this.object.hash })
+      store.commit('elements/setObjectHash', { hash: this.element.hash })
     },
-    selectObject() {
-      // unselect for double clicking the same object
+    selectElement() {
+      // unselect for double clicking the same element
       if (this.theSameSelected) {
         store.commit('elements/objectSelected', { selected: false })
         return

@@ -6,7 +6,7 @@
           <UserSidebar />
         </b-col>
 
-        <b-col class="mx-1 mt-2 main-backbox" md=5>
+        <b-col class="mx-2 mt-2 main-backbox" md=6>
           <MainView />
         </b-col>
 

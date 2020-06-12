@@ -27,7 +27,7 @@
   color: white;
   background-color: $darkest-gray;
   border-bottom: 2px solid $light-gray;
-  border-top: 2px solid $light-gray;
+  border-top: 1px solid $light-gray;
   border-radius: $b-rad-bottom;
 }
 
@@ -71,11 +71,24 @@
   color: $primary-color;
 }
 
+.box-column {
+  border-radius: $b-rad-top;
+  background-color: $light-gray;
+}
+
 .box-content {
-  margin: 4px auto auto 10px;
+  margin: 0px auto 0px auto;
   padding: 15px;
+
+  color: $primary-color;
   font-size: $font-small;
   text-align: left;
+
+  background-color: $dark-gray;
+
+  border-radius: $b-rad-top;
+  border-top: 2px solid $darkest-gray;
+  border-bottom: 1px solid $light-gray;
 }
 
 .box-header {

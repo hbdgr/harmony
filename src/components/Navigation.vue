@@ -18,7 +18,7 @@
           </b-nav-item>
         </b-navbar-nav>
 
-        <b-navbar-nav class="mx-5">
+        <b-navbar-nav class="mx-auto">
           <b-nav-form>
           <b-button v-b-toggle.collapse-addobject class="mr-sm-2 blue-glow" size="sm"> + </b-button>
           </b-nav-form>

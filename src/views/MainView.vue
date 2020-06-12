@@ -7,7 +7,7 @@
       </b-row>
       <b-row>
         <div class="centered" key="main">
-          <ObjectGraph />
+          <ElementStream />
         </div>
       </b-row>
     </b-container>
@@ -17,12 +17,12 @@
 <script>
 import AddObject from '@/components/AddObject.vue'
 import AddRelation from '@/components/AddRelation.vue'
-import ObjectGraph from '@/components/ObjectGraph.vue'
+import ElementStream from '@/views/ElementStream.vue'
 
 export default {
   name: 'MainView',
   components: {
-    ObjectGraph,
+    ElementStream,
     AddObject,
     AddRelation,
   },
