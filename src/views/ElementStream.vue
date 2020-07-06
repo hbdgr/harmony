@@ -3,7 +3,7 @@
     <DeleteModal :objectHash="selectedObjectHash" />
     <ObjectDetails :objectHash="selectedObjectHash" />
 
-      <div class="box-column" v-if="objectsUpToDate">
+      <div v-if="objectsUpToDate">
         <div v-for="obj in primaryElements" :key="obj.hash">
           <SimpleElement :element="obj" />
         </div>
@@ -44,14 +44,9 @@ export default {
       }
       return upToDate
     },
-    objectSelected() {
-      return store.getters['elements/objectSelected']
-    },
     selectedObjectHash() {
       return store.state.elements.objectHash
     },
-  },
-  filters: {
   },
   methods: {
     ...mapActions('elements', {

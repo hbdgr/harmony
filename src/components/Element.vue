@@ -1,7 +1,7 @@
 <template>
-  <div class="box" @click="selectElement">
+  <div class="box">
     <div class="box-header">
-      {{ element.hash }}
+      hash: {{ element.hash }}
     </div>
 
     <p class="box-content">{{ element.content.body }}</p>
@@ -67,5 +67,5 @@ export default {
 
 <style lang="scss">
   @import '../styles/Boxes.scss';
-  @import '../styles/General.scss';
+  @import '../styles/Icons.scss';
 </style>

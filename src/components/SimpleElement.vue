@@ -1,5 +1,5 @@
 <template>
-  <p class="box-content" @click="selectElement">{{ element.content.body }}</p>
+  <p class="box-simple-content" @click="selectElement">{{ element.content.body }}</p>
 </template>
 
 <script>

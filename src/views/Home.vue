@@ -2,17 +2,17 @@
   <div id="home">
     <b-container fluid>
       <b-row>
-        <b-col class="ml-auto mr-0" md=2>
-          <UserSidebar />
-        </b-col>
+        <!-- <b-col class="ml-auto mr-0" md=2> -->
+        <!--   <UserSidebar />                 -->
+        <!-- </b-col>                          -->
 
-        <b-col class="mx-2 mt-2 main-backbox" md=6>
+        <b-col class="mx-auto mt-2 main-backbox" md=7>
           <MainView />
         </b-col>
 
-        <b-col class="mr-auto ml-2" md=2>
-          <DefinitionsSidebar />
-        </b-col>
+        <!-- <b-col class="mr-auto ml-2" md=2> -->
+        <!--   <DefinitionsSidebar />          -->
+        <!-- </b-col>                          -->
       </b-row>
     </b-container>
   </div>
