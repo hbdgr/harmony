@@ -51,14 +51,6 @@
   background-color: $darkest-gray;
 }
 
-.addobject-box {
-  padding: 10px;
-
-  font-size: $font-small;
-  color: $primary-color;
-  background-color: $dark-gray;
-}
-
 .box {
   position: relative;
   width: 100%;
@@ -70,6 +62,15 @@
   background-color: $darkest-gray;
   font-size: $font-small;
   color: $primary-color;
+}
+
+.addobject-box {
+  @extend .box;
+  padding: 15px;
+
+  font-size: $font-small;
+  color: $primary-color;
+  background-color: $dark-gray;
 }
 
 .box-content {

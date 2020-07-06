@@ -1,46 +1,24 @@
 <template>
-    <b-collapse id="collapse-addobject" class="mt-2 addobject-box">
+    <b-collapse id="collapse-addobject" class="addobject-box">
       <ErrorModal :error="storeError" v-on:closed="storeError = ''"/>
       <b-container fluid>
         <b-row>
-          <b-form-group label-size="lg" label="Typ obiektu:">
-            <b-form-radio v-model="objectType" name="objType" value="PrimaryElement" default>
-              Objekt Elementarny
-            </b-form-radio>
-
-            <b-form-radio v-model="objectType" name="objType" value="RelationDefinition">
-              Definicja Relacji
-            </b-form-radio>
-
-            <b-form-checkbox
-              id="directed-check"
-              v-model="directed"
-              name="directed-check"
-              value="directed"
-              style="margin-left: 25px"
-              unchecked-value="not_directed"
-              v-if="objectType === 'RelationDefinition'"
-            >
-              relacja skierowana
-            </b-form-checkbox>
-
-          </b-form-group>
-
-        </b-row>
-        <b-row>
           <b-col>
-            <b-form-input v-model="content" @keyup.enter="addObject" placeholder="Napisz..." />
+            <b-form-input style="margin: 0  0 10px 0" v-model="content"
+              @keyup.enter="addObject" v-bind:placeholder="$t('word.write')+'...'" />
           </b-col>
         </b-row>
         <b-row>
           <b-col>
             <b-button class="add-button blue-glow" v-b-toggle="'collapse-addobject'"
               @click="addObject" style="float: left">
-              Dodaj
+              {{ $t('word.add') }}
             </b-button>
           </b-col>
           <b-col>
-            <b-button class="add-button" @click="clear" variant="secondary" style="float: right">Wyczyść</b-button>
+            <b-button class="add-button" @click="clear" variant="secondary" style="float: right">
+              {{ $t('word.clear') }}
+            </b-button>
           </b-col>
         </b-row>
       </b-container>

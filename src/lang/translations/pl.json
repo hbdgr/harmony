@@ -5,7 +5,10 @@
 	  "about": "Projekt",
 	  "search": "Szukaj",
 	  "type": "Typ",
-	  "content": "Treść"
+	  "content": "Treść",
+	  "add": "Dodaj",
+	  "write": "Napisz",
+	  "clear": "Wyczyść"
 	},
 	"title":{
 		"delete_me": "USUŃ MNIE"

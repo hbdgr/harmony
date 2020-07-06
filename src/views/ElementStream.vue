@@ -1,8 +1,5 @@
 <template>
   <div @click="unselectObject">
-    <DeleteModal :objectHash="selectedObjectHash" />
-    <ObjectDetails :objectHash="selectedObjectHash" />
-
       <div v-if="objectsUpToDate">
         <div v-for="obj in primaryElements" :key="obj.hash">
           <SimpleElement :element="obj" />
@@ -13,9 +10,8 @@
 </template>
 
 <script>
-import DeleteModal from '@/modals/DeleteModal.vue'
-import ObjectDetails from '@/modals/ObjectDetails.vue'
 import SimpleElement from '@/components/SimpleElement.vue'
+import ObjectDetails from '@/modals/ObjectDetails.vue'
 
 import store from '@/store'
 import { mapActions } from 'vuex'
@@ -23,7 +19,6 @@ import { mapActions } from 'vuex'
 export default {
   name: 'ElementStream',
   components: {
-    DeleteModal,
     ObjectDetails,
     SimpleElement,
   },

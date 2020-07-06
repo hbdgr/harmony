@@ -5,7 +5,10 @@
 	  "about": "About",
 	  "search": "Search",
 	  "type": "Type",
-	  "content": "Content"
+	  "content": "Content",
+	  "add": "Add",
+	  "write": "Write",
+	  "clear": "Clear"
 	},
 	"title":{
 		"delete_me": "DELETE ME"
