@@ -30,7 +30,16 @@ export default {
   },
   computed: {
     primaryElements() {
-      return store.getters['elements/primaryElements']
+      let searchStr = store.getters['navigation/searchStr']
+      let elements = store.getters['elements/primaryElements']
+
+      if (searchStr === '') {
+        return elements
+      }
+
+      console.log("eles:", elements)
+
+      return elements.filter(ele => (ele.content.body.search(searchStr) !== -1))
     },
     objectsUpToDate() {
       const upToDate = store.getters['elements/objectsUpToDate']

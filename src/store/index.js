@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 import { elements } from './elements'
+import { navigation } from './navigation'
 
 Vue.use(Vuex)
 
@@ -11,5 +12,6 @@ export default new Vuex.Store({
 
   modules: {
     elements,
+    navigation,
   },
 })

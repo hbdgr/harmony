@@ -23,10 +23,10 @@
           <b-button v-b-toggle.collapse-addobject class="mr-sm-2 blue-glow" size="sm"> + </b-button>
           </b-nav-form>
           <b-nav-form>
-            <b-form-input id="navsearch" size="sm" class="mr-sm-2" v-bind:placeholder="$t('word.search') "></b-form-input>
-            <b-button id="navbutton" size="sm" class="my-2 my-sm-0" type="submit">
-              {{ $t('word.search') }}
-            </b-button>
+            <b-form-input id="navsearch" size="sm" class="mr-sm-2" v-bind:placeholder="$t('word.search') " v-model="navSearchStr"></b-form-input>
+            <!-- <b-button id="navbutton" size="sm" class="my-2 my-sm-0" type="submit"> -->
+            <!--   {{ $t('word.search') }}                                              -->
+            <!-- </b-button>                                                            -->
           </b-nav-form>
         </b-navbar-nav>
 
@@ -54,7 +54,10 @@
 </template>
 
 <script>
-import { i18n } from "../main.js";
+import { i18n } from "@/main.js";
+import store from '@/store'
+
+import debounce from 'lodash.debounce'
 
 export default {
   name: 'Navigation',
@@ -62,13 +65,17 @@ export default {
     return {
       langs: ['pl','en'],
       langSelected: 'pl',
+      navSearchStr: '',
     }
   },
   watch: {
     langSelected: function(value) {
       console.log("Language change to:", value)
       i18n.locale = value
-    }
+    },
+    navSearchStr: debounce(function(value) {
+      store.commit('navigation/setSearchStr', { searchStr: value })
+    }, 500),
   },
 }
 </script>
