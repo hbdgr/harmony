@@ -37,9 +37,10 @@ export default {
         return elements
       }
 
-      console.log("eles:", elements)
-
-      return elements.filter(ele => (ele.content.body.search(searchStr) !== -1))
+      searchStr = searchStr.toLowerCase()
+      return elements.filter(ele =>
+        (ele.content.body.toLowerCase().search(searchStr) !== -1)
+      )
     },
     objectsUpToDate() {
       const upToDate = store.getters['elements/objectsUpToDate']
