@@ -1,4 +1,7 @@
+## (VERY EARLY STAGE) (WORK IN PROGRESS)
+
 # Harmony
+Very general front-end interface for the `cybernetics` project with still undefined specific purpose.
 
 ## Project setup
 ```
