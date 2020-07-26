@@ -8,7 +8,11 @@
 	  "content": "Content",
 	  "add": "Add",
 	  "write": "Write",
-	  "clear": "Clear"
+	  "clear": "Clear",
+	  "lang": "Lang",
+	  "user": "User",
+	  "profile": "Profile",
+	  "sign_out": "Sign Out"
 	},
 	"title":{
 		"delete_me": "DELETE ME"
