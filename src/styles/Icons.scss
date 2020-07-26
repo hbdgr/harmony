@@ -34,3 +34,8 @@
   animation: color_change 3s;
 }
 
+.bars:hover {
+  cursor: pointer;
+  color: $dark-gray !important;
+  animation: color_change 3s;
+}

@@ -12,6 +12,7 @@ import messages from './lang';
 import 'vue-awesome/icons/trash'
 import 'vue-awesome/icons/info-circle'
 import 'vue-awesome/icons/regular/window-close'
+import 'vue-awesome/icons/bars'
 
 Vue.use(VueI18n)
 

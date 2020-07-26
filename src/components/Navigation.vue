@@ -31,7 +31,7 @@
         </b-navbar-nav>
 
         <b-navbar-nav class="ml-auto mr-auto">
-          <b-nav-item-dropdown text="Lang">
+          <b-nav-item-dropdown v-bind:text="$t('word.lang')">
               <option v-for="(lang, i) in langs" :key="`lang-${i}`" :value="lang">
                 <b-dropdown-item @click="langSelected=lang" href="#">
                   {{ lang.toUpperCase() }}
@@ -41,9 +41,9 @@
 
           <b-nav-item-dropdown>
             <!-- Using 'button-content' slot -->
-            <template slot="button-content"><em>User</em></template>
-            <b-dropdown-item href="#">Profile</b-dropdown-item>
-            <b-dropdown-item href="#">Sign Out</b-dropdown-item>
+            <template slot="button-content"><em> {{ $t('word.user') }} </em></template>
+            <b-dropdown-item href="#"> {{ $t('word.profile') }} </b-dropdown-item>
+            <b-dropdown-item href="#"> {{ $t('word.sign_out') }} </b-dropdown-item>
           </b-nav-item-dropdown>
 
         </b-navbar-nav>
@@ -80,5 +80,5 @@ export default {
 }
 </script>
 <style lang="scss">
-  @import '../styles/General.scss';
+  @import '@/styles/App.scss';
 </style>

@@ -10,9 +10,9 @@
           <MainView />
         </b-col>
 
-        <b-col class="mr-auto ml-0 pl-0" md=2>
-          <DefinitionsSidebar />
-        </b-col>
+        <!-- <b-col class="mr-auto ml-0 pl-0" md=2> -->
+        <!--   <DefinitionsSidebar />               -->
+        <!-- </b-col>                               -->
       </b-row>
     </b-container>
   </div>
