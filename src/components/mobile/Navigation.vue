@@ -8,20 +8,18 @@
 
     <!-- <b-navbar-brand href="#">Harmony</b-navbar-brand> -->
 
-    <b-nav-form class=>
-      <b-form-input left id="mobile-navsearch" size="mr-sm-1" class="" v-bind:placeholder="$t('word.search') " v-model="navsearchstr">
-      </b-form-input>
-    </b-nav-form>
+    <b-form-input left id="mobile-navsearch" size="mr-sm-1" class="ml-auto mr-auto" v-bind:placeholder="$t('word.search') " v-model="navSearchStr">
+    </b-form-input>
 
-    <b-navbar-nav>
-      <b-nav-item-dropdown class="mr-4" right style="width: 30px" v-bind:text="langSelected">
-        <option v-for="(lang, i) in langs" :key="`lang-${i}`" :value="lang">
-          <b-dropdown-item @click="langSelected=lang" href="#">
-            {{ lang }}
-          </b-dropdown-item>
-        </option>
-      </b-nav-item-dropdown>
-    </b-navbar-nav>
+    <!-- <b-navbar-nav>                                                                            -->
+    <!--   <b-nav-item-dropdown class="mr-4" right style="width: 30px" v-bind:text="langSelected"> -->
+    <!--     <option v-for="(lang, i) in langs" :key="`lang-${i}`" :value="lang">                  -->
+    <!--       <b-dropdown-item @click="langSelected=lang" href="#">                               -->
+    <!--         {{ lang }}                                                                        -->
+    <!--       </b-dropdown-item>                                                                  -->
+    <!--     </option>                                                                             -->
+    <!--   </b-nav-item-dropdown>                                                                  -->
+    <!-- </b-navbar-nav>                                                                           -->
 
 
     <b-collapse id="navbar-toggle-collapse" is-nav>
