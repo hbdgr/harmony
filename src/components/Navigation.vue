@@ -31,21 +31,22 @@
         </b-navbar-nav>
 
         <b-navbar-nav class="ml-auto mr-auto">
-          <b-nav-item-dropdown v-bind:text="$t('word.lang')">
-              <option v-for="(lang, i) in langs" :key="`lang-${i}`" :value="lang">
-                <b-dropdown-item @click="langSelected=lang" href="#">
-                  {{ lang.toUpperCase() }}
-                </b-dropdown-item>
-              </option>
-          </b-nav-item-dropdown>
-
-          <b-nav-item-dropdown>
+          <b-nav-item-dropdown style="width: 150px; text-align: right">
             <!-- Using 'button-content' slot -->
             <template slot="button-content"><em> {{ $t('word.user') }} </em></template>
             <b-dropdown-item href="#"> {{ $t('word.profile') }} </b-dropdown-item>
             <b-dropdown-item href="#"> {{ $t('word.sign_out') }} </b-dropdown-item>
           </b-nav-item-dropdown>
 
+          <div class="darkline"></div>
+
+          <b-nav-item-dropdown style="width: 150px" v-bind:text="langSelected">
+              <option v-for="(lang, i) in langs" :key="`lang-${i}`" :value="lang">
+                <b-dropdown-item @click="langSelected=lang" href="#">
+                  {{ lang }}
+                </b-dropdown-item>
+              </option>
+          </b-nav-item-dropdown>
         </b-navbar-nav>
 
       </b-collapse>
@@ -63,15 +64,27 @@ export default {
   name: 'Navigation',
   data() {
     return {
-      langs: ['pl','en'],
-      langSelected: 'pl',
+      langs: ['Polski','English'],
+      langSelected: 'Polski',
       navSearchStr: '',
     }
   },
+  methods: {
+    transLang(lang) {
+      if(lang === 'Polski') {
+        return 'pl'
+      }
+      if(lang === 'English') {
+        return 'en'
+      }
+      return 'Unknown'
+    },
+  },
   watch: {
     langSelected: function(value) {
-      console.log("Language change to:", value)
-      i18n.locale = value
+      let trans = this.transLang(value)
+      console.log("Language change to:", trans)
+      i18n.locale = trans
     },
     navSearchStr: debounce(function(value) {
       store.commit('navigation/setSearchStr', { searchStr: value })
@@ -81,4 +94,5 @@ export default {
 </script>
 <style lang="scss">
   @import '@/styles/App.scss';
+  @import '@/styles/General.scss';
 </style>

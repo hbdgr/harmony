@@ -1,15 +1,28 @@
 <template>
   <b-navbar id="mobile-nav" toggleable type="dark">
-
-    <!-- <b-navbar-brand href="#">Harmony</b-navbar-brand> -->
-
-    <b-form-input id="navsearch" size="sm" class="mr-sm-2" v-bind:placeholder="$t('word.search') " v-model="navSearchStr"></b-form-input>
-
     <b-navbar-toggle target="navbar-toggle-collapse">
       <template v-slot:default="{ expanded }">
         <v-icon class="bars" name="bars" scale="1.5" />
       </template>
     </b-navbar-toggle>
+
+    <!-- <b-navbar-brand href="#">Harmony</b-navbar-brand> -->
+
+    <b-nav-form class=>
+      <b-form-input left id="mobile-navsearch" size="mr-sm-1" class="" v-bind:placeholder="$t('word.search') " v-model="navsearchstr">
+      </b-form-input>
+    </b-nav-form>
+
+    <b-navbar-nav>
+      <b-nav-item-dropdown class="mr-4" right style="width: 30px" v-bind:text="langSelected">
+        <option v-for="(lang, i) in langs" :key="`lang-${i}`" :value="lang">
+          <b-dropdown-item @click="langSelected=lang" href="#">
+            {{ lang }}
+          </b-dropdown-item>
+        </option>
+      </b-nav-item-dropdown>
+    </b-navbar-nav>
+
 
     <b-collapse id="navbar-toggle-collapse" is-nav>
       <b-navbar-nav class="ml-auto">
@@ -24,27 +37,14 @@
           <router-link tag="li" to="/about"> {{ $t('word.about') }}  </router-link>
         </b-nav-item>
 
-
-        <b-nav-item-dropdown>
-          <template slot="lang"><em> {{ $t('word.lang') }} </em></template>
-          <option v-for="(lang, i) in langs" :key="`lang-${i}`" :value="lang">
-            <b-dropdown-item @click="langSelected=lang" href="#">
-              {{ lang.toUpperCase() }}
-            </b-dropdown-item>
-          </option>
-        </b-nav-item-dropdown>
-
         <b-nav-item-dropdown>
           <template slot="button-content"><em> {{ $t('word.user') }} </em></template>
           <b-dropdown-item href="#"> {{ $t('word.profile') }} </b-dropdown-item>
           <b-dropdown-item href="#"> {{ $t('word.sign_out') }} </b-dropdown-item>
         </b-nav-item-dropdown>
 
-
       </b-navbar-nav>
     </b-collapse>
-
-
   </b-navbar>
 </template>
 

@@ -51,6 +51,17 @@ li {
 }
 
 #mobile-nav {
-  padding: 10px 10px 20px;
-  margin-right: 10px;
+  width: 100%;
+
+  padding: 10px 10px 10px;
+  margin-right: 20px;
+
+  background-color: $darkest-gray;
+}
+
+#mobile-navsearch {
+  padding: auto;
+
+  height: 30px;
+  width: 70%;
 }
