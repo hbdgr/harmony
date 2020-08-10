@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export default () => axios.create({
-  baseURL: 'http://localhost:8000/',
+  baseURL: process.env.VUE_APP_URL,
   timeout: 10000,
   withCredentials: true,
   transformRequest: [data => JSON.stringify(data)],
