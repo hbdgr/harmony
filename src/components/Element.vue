@@ -1,7 +1,7 @@
 <template>
   <div class="box">
     <div class="box-header">
-      hash: {{ element.hash }}
+      {{ shortenHah }}
     </div>
 
     <p class="box-content">{{ element.content.body }}</p>
@@ -39,6 +39,23 @@ export default {
       }
 
       return 'unknown'
+    },
+    shortenHah() {
+      const { hash } = this.element
+      if (window.innerWidth >= 955) {
+        return hash
+      }
+
+      let partSize = 24
+      if (window.innerWidth <= 450) {
+        partSize = 10
+      }
+
+      let shorten = hash.substr(0, partSize)
+      shorten += '...'
+      shorten += hash.substr(hash.length - partSize)
+
+      return shorten
     },
   },
   methods: {

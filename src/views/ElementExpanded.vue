@@ -3,24 +3,23 @@
     <DeleteModal :objectHash="elementHash" />
     <ObjectDetails :objectHash="elementHash" />
 
-    <b-container>
-      <b-row>
-        <b-col cols="11">
-          <Origin :childHash="elementHash" />
-          <hr style="margin: 2px">
+    <hr style="margin: 2px auto 5px auto">
 
+    <div class="close-box">
+      <v-icon class="close" name="regular/window-close" scale="1.9"
+        @click.native="closeClicked" />
+    </div>
 
-          <Element :element="element" />
-          <hr style="margin: 2px">
+    <hr style="margin: 5px auto 5px auto">
 
-          <Comments :parentHash="elementHash" />
-        </b-col>
-        <b-col cols="1">
-          <v-icon class="close" name="regular/window-close" scale="1.9"
-            @click.native="closeClicked" />
-        </b-col>
-      </b-row>
-    </b-container>
+    <Origin :childHash="elementHash" />
+    <hr style="margin: 2px">
+
+    <Element :element="element" />
+    <hr style="margin: 2px">
+
+    <Comments :parentHash="elementHash" />
+
   </div>
 </template>
 

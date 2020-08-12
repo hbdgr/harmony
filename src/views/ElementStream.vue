@@ -10,16 +10,15 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 import SimpleElement from '@/components/SimpleElement.vue'
-import ObjectDetails from '@/modals/ObjectDetails.vue'
 
 import store from '@/store'
-import { mapActions } from 'vuex'
 
 export default {
   name: 'ElementStream',
   components: {
-    ObjectDetails,
     SimpleElement,
   },
   data() {
@@ -31,7 +30,7 @@ export default {
   computed: {
     primaryElements() {
       let searchStr = store.getters['navigation/searchStr']
-      let elements = store.getters['elements/primaryElements']
+      const elements = store.getters['elements/primaryElements']
 
       if (searchStr === '') {
         return elements

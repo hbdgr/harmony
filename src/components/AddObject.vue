@@ -10,13 +10,13 @@
         </b-row>
         <b-row>
           <b-col>
-            <b-button class="add-button blue-glow" v-b-toggle="'collapse-addobject'"
+            <b-button class="add-button blue-glow btn-sm" v-b-toggle="'collapse-addobject'"
               @click="addObject" style="float: left">
               {{ $t('word.add') }}
             </b-button>
           </b-col>
           <b-col>
-            <b-button class="add-button" @click="clear" variant="secondary" style="float: right">
+            <b-button class="add-button btn-sm" @click="clear" variant="secondary" style="float: right">
               {{ $t('word.clear') }}
             </b-button>
           </b-col>

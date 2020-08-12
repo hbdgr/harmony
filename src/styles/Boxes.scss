@@ -99,13 +99,13 @@
 
 .box-header {
   width: 100%;
-  padding-left: 15px;
 
   word-break: break-all;
-  text-align: left;
+  text-align: center;
 
   background-color: $blue-glow;
   font-family: $stack-monospace;
+  font-size: $font-smaller;
 
   border-top: 1px solid $darkest-gray;
   border-radius: $b-rad-top;
@@ -121,6 +121,6 @@
   background-color: $dark-gray;
 }
 
-.back-close-box {
+.close-box {
   height: 30px;
 }

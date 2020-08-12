@@ -31,7 +31,7 @@
         </b-navbar-nav>
 
         <b-navbar-nav class="ml-auto mr-auto">
-          <b-nav-item-dropdown style="width: 150px; text-align: right">
+          <b-nav-item-dropdown style="width: 120px; text-align: right">
             <!-- Using 'button-content' slot -->
             <template slot="button-content"><em> {{ $t('word.user') }} </em></template>
             <b-dropdown-item href="#"> {{ $t('word.profile') }} </b-dropdown-item>
@@ -40,7 +40,7 @@
 
           <div class="darkline"></div>
 
-          <b-nav-item-dropdown style="width: 150px" v-bind:text="langSelected">
+          <b-nav-item-dropdown style="width: 100px" v-bind:text="langSelected">
               <option v-for="(lang, i) in langs" :key="`lang-${i}`" :value="lang">
                 <b-dropdown-item @click="langSelected=lang" href="#">
                   {{ lang }}
