@@ -20,7 +20,7 @@
 
         <b-navbar-nav class="mx-auto">
           <b-nav-form>
-          <b-button v-b-toggle.collapse-addobject class="mr-sm-2 blue-glow" size="sm"> + </b-button>
+            <b-button v-b-toggle.collapse-addobject class="mr-sm-2 blue-glow" size="sm"> + </b-button>
           </b-nav-form>
           <b-nav-form>
             <b-form-input id="navsearch" size="sm" class="mr-sm-2" v-bind:placeholder="$t('word.search') " v-model="navSearchStr"></b-form-input>
@@ -55,10 +55,10 @@
 </template>
 
 <script>
-import { i18n } from "@/main.js";
-import store from '@/store'
 
 import debounce from 'lodash.debounce'
+import { i18n } from '@/main.js';
+import store from '@/store'
 
 export default {
   name: 'Navigation',

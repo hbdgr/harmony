@@ -24,3 +24,9 @@
   margin: 4px 6px 4px 6px;
   border-left: 2px ridge $light-gray;
 }
+
+.horizontal-divider {
+  margin: 10px auto auto auto;
+  width: 100%;
+  border-top: 1px solid $light-gray
+}
