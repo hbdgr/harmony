@@ -97,6 +97,15 @@
   border-bottom: 1px solid $light-gray;
 }
 
+.object-details-box {
+  text-align: left;
+
+  font-family: $stack-monospace;
+  font-size: $font-smaller;
+  word-break: break-word;
+}
+
+
 .box-header {
   width: 100%;
 

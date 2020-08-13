@@ -83,6 +83,6 @@ export default {
 </script>
 
 <style lang="scss">
-  @import '../styles/Boxes.scss';
-  @import '../styles/Icons.scss';
+  @import '@/styles/Boxes.scss';
+  @import '@/styles/Icons.scss';
 </style>

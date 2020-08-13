@@ -1,27 +1,29 @@
 <template>
-  <b-modal id=object-details class="object-details-box" size="lg"
+  <b-modal id="object-details" size="sm"
     :hide-header-close=true
     centered :title="$t('message.object_details')+':'"
     @ok="close" @hidden="close"
     no-stacking ok-only >
-    <h6> Hash: </h6>
-      {{ objectHash }}
-    <hr>
-    <h6> {{ $t('word.type')}}: </h6>
-    <p>
-      {{ objectType() }}
-    </p>
-    <hr>
-    <h6> {{ $t('word.content') }}: </h6>
-    <p>
-      {{ objectContent() }}
-    </p>
+    <div class="object-details-box">
+      <h6> Hash: </h6>
+        {{ objectHash }}
+      <hr>
+      <h6> {{ $t('word.type')}}: </h6>
+      <p>
+        {{ objectType() }}
+      </p>
+      <hr>
+      <h6> {{ $t('word.content') }}: </h6>
+      <p>
+        {{ objectContent() }}
+      </p>
+    </div>
   </b-modal>
 </template>
 
 <script>
-import store from '@/store'
 import get from 'lodash.get'
+import store from '@/store'
 
 export default {
   name: 'ObjectDetails',
@@ -33,23 +35,23 @@ export default {
     }
   },
   computed: {
-   selectedObject() {
-     return store.getters['elements/byHash'](this.objectHash)
-   },
+    selectedObject() {
+      return store.getters['elements/byHash'](this.objectHash)
+    },
   },
   methods: {
     objectType() {
-      let header = get(this.selectedObject, "content.header.object_type")
+      const header = get(this.selectedObject, 'content.header.object_type')
       if (header === undefined) {
-        return ""
+        return ''
       }
 
       return header
     },
     objectContent() {
-      let content = get(this.selectedObject, "content.body")
+      const content = get(this.selectedObject, 'content.body')
       if (content === undefined) {
-        return ""
+        return ''
       }
 
       return content
@@ -61,5 +63,5 @@ export default {
 </script>
 
 <style lang="scss">
-  @import '../styles/General.scss';
+  @import '@/styles/Boxes.scss';
 </style>
