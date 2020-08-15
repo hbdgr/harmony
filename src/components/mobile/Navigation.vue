@@ -6,7 +6,7 @@
       </template>
     </b-navbar-toggle>
 
-    <!-- <b-navbar-brand href="#">Harmony</b-navbar-brand> -->
+    <!-- <b-navbar-brand>Harmony</b-navbar-brand> -->
 
     <b-form-input id="mobile-navsearch" size="sm" class="ml-auto" v-bind:placeholder="$t('word.search') " v-model="navSearchStr">
     </b-form-input>
@@ -17,26 +17,26 @@
     <b-collapse id="navbar-toggle-collapse" is-nav>
       <b-navbar-nav class="ml-auto">
 
-        <b-nav-item href="#">
+        <b-nav-item>
           <router-link tag="li" to="/"> {{ $t('word.home') }} </router-link>
         </b-nav-item>
-        <b-nav-item href="#" disabled>
+        <b-nav-item disabled>
           <router-link tag="li" to="/about"> {{ $t('word.contact') }}  </router-link>
         </b-nav-item>
-        <b-nav-item href="#">
+        <b-nav-item>
           <router-link tag="li" to="/about"> {{ $t('word.about') }}  </router-link>
         </b-nav-item>
 
         <b-nav-item-dropdown v-bind:text="$t('word.user')">
-          <b-dropdown-item  style="text-color: white" href="#"> {{ $t('word.profile') }} </b-dropdown-item>
-          <b-dropdown-item href="#"> {{ $t('word.sign_out') }} </b-dropdown-item>
+          <b-dropdown-item  style="text-color: white"> {{ $t('word.profile') }} </b-dropdown-item>
+          <b-dropdown-item> {{ $t('word.sign_out') }} </b-dropdown-item>
         </b-nav-item-dropdown>
 
         <hr class="horizontal-divider">
 
         <b-nav-item-dropdown v-bind:text="langSelected">
           <option v-for="(lang, i) in langs" :key="`lang-${i}`" :value="lang">
-            <b-dropdown-item @click="langSelected=lang" href="#">
+            <b-dropdown-item @click="langSelected=lang">
               {{ lang }}
             </b-dropdown-item>
           </option>

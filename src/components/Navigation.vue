@@ -2,18 +2,18 @@
   <div id="nav">
     <b-navbar id="navbar" toggleable="lg" type="dark" fixed="top">
       <b-collapse id="nav-collapse" is-nav>
-        <b-navbar-brand class="ml-auto" href="#">Harmony</b-navbar-brand>
+        <b-navbar-brand class="ml-auto">Harmony</b-navbar-brand>
 
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
         <b-navbar-nav  class="ml-0" style="width: 300px">
-          <b-nav-item href="#">
+          <b-nav-item>
             <router-link tag="li" to="/"> {{ $t('word.home') }} </router-link>
           </b-nav-item>
-          <b-nav-item href="#" disabled>
+          <b-nav-item disabled>
             <router-link tag="li" to="/about"> {{ $t('word.contact') }}  </router-link>
           </b-nav-item>
-          <b-nav-item href="#">
+          <b-nav-item>
             <router-link tag="li" to="/about"> {{ $t('word.about') }}  </router-link>
           </b-nav-item>
         </b-navbar-nav>
@@ -34,15 +34,15 @@
           <b-nav-item-dropdown style="width: 120px; text-align: right">
             <!-- Using 'button-content' slot -->
             <template slot="button-content"><em> {{ $t('word.user') }} </em></template>
-            <b-dropdown-item href="#"> {{ $t('word.profile') }} </b-dropdown-item>
-            <b-dropdown-item href="#"> {{ $t('word.sign_out') }} </b-dropdown-item>
+            <b-dropdown-item> {{ $t('word.profile') }} </b-dropdown-item>
+            <b-dropdown-item> {{ $t('word.sign_out') }} </b-dropdown-item>
           </b-nav-item-dropdown>
 
           <div class="darkline"></div>
 
           <b-nav-item-dropdown style="width: 100px" v-bind:text="langSelected">
               <option v-for="(lang, i) in langs" :key="`lang-${i}`" :value="lang">
-                <b-dropdown-item @click="langSelected=lang" href="#">
+                <b-dropdown-item @click="langSelected=lang">
                   {{ lang }}
                 </b-dropdown-item>
               </option>
@@ -57,24 +57,24 @@
 <script>
 
 import debounce from 'lodash.debounce'
-import { i18n } from '@/main.js';
+import { i18n } from '@/main'
 import store from '@/store'
 
 export default {
   name: 'Navigation',
   data() {
     return {
-      langs: ['Polski','English'],
+      langs: ['Polski', 'English'],
       langSelected: 'Polski',
       navSearchStr: '',
     }
   },
   methods: {
     transLang(lang) {
-      if(lang === 'Polski') {
+      if (lang === 'Polski') {
         return 'pl'
       }
-      if(lang === 'English') {
+      if (lang === 'English') {
         return 'en'
       }
       return 'Unknown'
