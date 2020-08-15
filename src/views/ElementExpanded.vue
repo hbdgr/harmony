@@ -28,8 +28,8 @@ import Element from '@/components/Element'
 import Origin from '@/components/Origin'
 import Comments from '@/components/Comments'
 
-import DeleteModal from '@/modals/DeleteModal.vue'
-import ObjectDetails from '@/modals/ObjectDetails.vue'
+import DeleteModal from '@/modals/DeleteModal'
+import ObjectDetails from '@/modals/ObjectDetails'
 
 import store from '@/store'
 
@@ -48,7 +48,7 @@ export default {
   computed: {
     element() {
       return store.getters['elements/byHash'](this.elementHash)
-    }
+    },
   },
   methods: {
     closeClicked() {

@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-import { elements } from './elements'
+import elements from './elements'
 import { navigation } from './navigation'
 
 Vue.use(Vuex)

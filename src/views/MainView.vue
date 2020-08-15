@@ -19,7 +19,7 @@
 
 <script>
 import AddObject from '@/components/AddObject.vue'
-import AddRelation from '@/components/AddRelation.vue'
+// import AddRelation from '@/components/AddRelation.vue'
 import ElementStream from '@/views/ElementStream.vue'
 import ElementExpanded from '@/views/ElementExpanded.vue'
 
@@ -31,7 +31,7 @@ export default {
     ElementStream,
     ElementExpanded,
     AddObject,
-    AddRelation,
+    // AddRelation,
   },
   data() {
     return {
@@ -43,7 +43,7 @@ export default {
     },
     objectHash() {
       return store.getters['elements/hash']
-    }
+    },
   },
 }
 </script>

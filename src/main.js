@@ -1,13 +1,13 @@
 import Vue from 'vue'
 import { NavbarPlugin, BootstrapVue } from 'bootstrap-vue'
 import Icon from 'vue-awesome/components/Icon.vue'
+import VueI18n from 'vue-i18n'
 
 import App from './App.vue'
 import router from './router'
 import store from './store'
 
-import VueI18n from 'vue-i18n'
-import messages from './lang';
+import messages from './lang'
 
 import 'vue-awesome/icons/trash'
 import 'vue-awesome/icons/info-circle'

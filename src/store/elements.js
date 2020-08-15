@@ -1,6 +1,6 @@
 import DataApi from '@/services/DataApi'
 
-export const elements = {
+export default {
   namespaced: true,
 
   state: () => ({
@@ -53,7 +53,7 @@ export const elements = {
     hash(state) {
       let h = state.objectHash
       if (h === undefined) {
-        if (state.selected == false) {
+        if (state.selected === false) {
           console.log('[store] hash, trying to get hash, of unselected element')
         } else {
           console.log('[store] hash, Error: trying to get hash, but undefined!')
@@ -111,5 +111,5 @@ export const elements = {
     },
     // addRelation({ commit, state }, payload) {
     // },
-  }
+  },
 }
