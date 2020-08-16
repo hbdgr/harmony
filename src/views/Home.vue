@@ -20,19 +20,22 @@
 
 <script>
 // @ is an alias to /src
-import store from '@/store'
-import MainView from '@/views/MainView.vue'
-import ObjectDetails from '@/modals/ObjectDetails.vue'
-import UserSidebar from '@/components/UserSidebar.vue'
-import DefinitionsSidebar from '@/components/DefinitionsSidebar.vue'
+import MainView from '@/views/MainView'
+// import UserSidebar from '@/components/UserSidebar.vue'
+// import DefinitionsSidebar from '@/components/DefinitionsSidebar.vue'
 
 export default {
   name: 'Home',
   components: {
     MainView,
-    ObjectDetails,
-    UserSidebar,
-    DefinitionsSidebar,
+    // UserSidebar,
+    // DefinitionsSidebar,
+  },
+  watch: {
+    $route(to, from) {
+      console.log('to', to)
+      console.log('from', from)
+    },
   },
 }
 </script>

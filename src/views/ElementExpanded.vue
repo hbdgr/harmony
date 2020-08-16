@@ -1,24 +1,26 @@
 <template>
   <div>
-    <DeleteModal :objectHash="elementHash" />
-    <ObjectDetails :objectHash="elementHash" />
+    <DeleteModal :objectHash="hash" />
+    <ObjectDetails :objectHash="hash" />
 
     <hr style="margin: 2px auto 5px auto">
 
     <div class="close-box">
-      <v-icon class="close" name="regular/window-close" scale="1.9"
-        @click.native="closeClicked" />
+      <router-link to="/">
+        <v-icon class="close" name="regular/window-close" scale="1.9"
+          @click.native="closeClicked" />
+      </router-link>
     </div>
 
     <hr style="margin: 5px auto 5px auto">
 
-    <Origin :childHash="elementHash" />
+    <Origin :childHash="hash" />
     <hr style="margin: 2px">
 
-    <Element :element="element" />
+    <Element v-if="objectsUpToDate" :element="element" />
     <hr style="margin: 2px">
 
-    <Comments :parentHash="elementHash" />
+    <Comments :parentHash="hash" />
 
   </div>
 </template>
@@ -46,8 +48,21 @@ export default {
     elementHash: String,
   },
   computed: {
+    objectsUpToDate() {
+      const upToDate = store.getters['elements/objectsUpToDate']
+      if (!upToDate) {
+        store.dispatch('elements/updateObjects')
+      }
+      return upToDate
+    },
     element() {
-      return store.getters['elements/byHash'](this.elementHash)
+      if (this.elementHash !== undefined) {
+        return store.getters['elements/byHash'](this.elementHash)
+      }
+      return store.getters['elements/byHash'](this.hash)
+    },
+    hash() {
+      return this.$route.params.id
     },
   },
   methods: {

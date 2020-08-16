@@ -51,7 +51,7 @@ export default {
       return state.objects.filter(obj => Object.keys(obj.content.header.object_type)[0] === 'RelationDefinition')
     },
     hash(state) {
-      let h = state.objectHash
+      const h = state.objectHash
       if (h === undefined) {
         if (state.selected === false) {
           console.log('[store] hash, trying to get hash, of unselected element')
@@ -62,9 +62,8 @@ export default {
 
       return h
     },
-    byHash: (state) => (hash) => {
-      return state.objects.find(obj => obj.hash === hash)
-    }
+    byHash: state => hash => (state.objects.find(obj => obj.hash === hash)),
+    exist: state => hash => (state.objects.includes(hash)),
   },
 
   actions: {

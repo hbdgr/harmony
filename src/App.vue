@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import Navigation from '@/components/Navigation.vue'
-import MobileNavigation from '@/components/mobile/Navigation.vue'
+import Navigation from '@/components/Navigation'
+import MobileNavigation from '@/components/mobile/Navigation'
 
 export default {
   name: 'App',
@@ -21,7 +21,7 @@ export default {
     return {
       mobileView: true,
       showNav: false,
-    };
+    }
   },
   methods: {
     handleView() {

@@ -20,9 +20,12 @@
 import store from '@/store'
 
 export default {
-  name: 'SimpleElement',
+  name: 'Element',
   props: {
     element: Object,
+  },
+  mounted() {
+    console.log('Element.mounted: route =>', this.$route.params.id)
   },
   computed: {
     theSameSelected() {

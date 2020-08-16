@@ -2,17 +2,18 @@
   <div @click="unselectObject">
       <div v-if="objectsUpToDate">
         <div v-for="obj in primaryElements" :key="obj.hash">
-          <SimpleElement :element="obj" />
+          <router-link :to="{name: 'element_expanded', params:{id: obj.hash, elementHash: obj.hash}}">
+            <SimpleElement :element="obj" />
+          </router-link>
         </div>
       </div>
-
   </div>
 </template>
 
 <script>
 import { mapActions } from 'vuex'
 
-import SimpleElement from '@/components/SimpleElement.vue'
+import SimpleElement from '@/components/SimpleElement'
 
 import store from '@/store'
 
@@ -37,9 +38,7 @@ export default {
       }
 
       searchStr = searchStr.toLowerCase()
-      return elements.filter(ele =>
-        (ele.content.body.toLowerCase().search(searchStr) !== -1)
-      )
+      return elements.filter(ele => (ele.content.body.toLowerCase().search(searchStr) !== -1))
     },
     objectsUpToDate() {
       const upToDate = store.getters['elements/objectsUpToDate']

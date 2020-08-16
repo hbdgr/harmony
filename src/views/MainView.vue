@@ -6,11 +6,8 @@
         <AddObject />
       </b-row>
       <b-row>
-        <div class="centered" v-if="!objectSelected" key="main">
-          <ElementStream />
-        </div>
-        <div class="centered" v-else>
-          <ElementExpanded :elementHash="objectHash" />
+        <div class="centered">
+          <router-view />
         </div>
       </b-row>
     </b-container>
@@ -18,18 +15,14 @@
 </template>
 
 <script>
-import AddObject from '@/components/AddObject.vue'
+import AddObject from '@/components/AddObject'
 // import AddRelation from '@/components/AddRelation.vue'
-import ElementStream from '@/views/ElementStream.vue'
-import ElementExpanded from '@/views/ElementExpanded.vue'
 
 import store from '@/store'
 
 export default {
   name: 'MainView',
   components: {
-    ElementStream,
-    ElementExpanded,
     AddObject,
     // AddRelation,
   },
