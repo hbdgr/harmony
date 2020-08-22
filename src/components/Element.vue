@@ -6,7 +6,7 @@
 
     <p class="box-content">{{ element.content.body }}</p>
 
-    <div class="box-footer" >
+    <div class="box-footer">
       <v-icon class="info-circle" name="info-circle" scale="1.7"
         @click.stop="infoClicked" v-b-modal.object-details />
 
@@ -26,6 +26,7 @@ export default {
   },
   mounted() {
     console.log('Element.mounted: route =>', this.$route.params.id)
+    console.log('Element obj:', this.element)
   },
   computed: {
     theSameSelected() {

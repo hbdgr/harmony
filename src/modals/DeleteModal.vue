@@ -20,6 +20,7 @@ export default {
     deleteOk() {
       store.dispatch('elements/deleteObject', { objectHash: this.objectHash })
       store.commit('elements/objectSelected', { selected: false })
+      this.$router.push('/mainview')
     },
   },
 }

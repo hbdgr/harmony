@@ -6,7 +6,7 @@
     <hr style="margin: 2px auto 5px auto">
 
     <div class="close-box">
-      <router-link to="/">
+      <router-link to="/mainview">
         <v-icon class="close" name="regular/window-close" scale="1.9"
           @click.native="closeClicked" />
       </router-link>
@@ -59,10 +59,13 @@ export default {
       if (this.elementHash !== undefined) {
         return store.getters['elements/byHash'](this.elementHash)
       }
-      return store.getters['elements/byHash'](this.hash)
+      return store.getters['elements/byBase64'](this.base64)
+    },
+    base64() {
+      return this.$route.params.id
     },
     hash() {
-      return this.$route.params.id
+      return Buffer.from(this.base64, 'base64').toString('hex')
     },
   },
   methods: {

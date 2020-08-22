@@ -17,7 +17,7 @@ export default new Router({
       component: Home,
       children: [
         {
-          path: '',
+          path: 'mainview',
           name: 'mainview',
           component: MainView,
           children: [

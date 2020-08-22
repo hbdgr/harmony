@@ -8,7 +8,7 @@
 
         <b-navbar-nav  class="ml-0" style="width: 300px">
           <b-nav-item>
-            <router-link tag="li" to="/"> {{ $t('word.home') }} </router-link>
+            <router-link tag="li" to="/mainview"> {{ $t('word.home') }} </router-link>
           </b-nav-item>
           <b-nav-item disabled>
             <router-link tag="li" to="/about"> {{ $t('word.contact') }}  </router-link>

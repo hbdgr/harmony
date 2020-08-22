@@ -1,3 +1,4 @@
+import { Buffer } from 'buffer'
 import DataApi from '@/services/DataApi'
 
 export default {
@@ -63,6 +64,10 @@ export default {
       return h
     },
     byHash: state => hash => (state.objects.find(obj => obj.hash === hash)),
+    byBase64: state => (base64) => {
+      const hash = Buffer.from(base64, 'base64').toString('hex')
+      return state.objects.find(obj => obj.hash === hash)
+    },
     exist: state => hash => (state.objects.includes(hash)),
   },
 

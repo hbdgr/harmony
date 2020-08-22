@@ -7,7 +7,7 @@
         <!-- </b-col>                          -->
 
         <b-col class="mx-auto mt-2 main-backbox" md=7>
-          <MainView />
+          <router-view />
         </b-col>
 
         <!-- <b-col class="mr-auto ml-0 pl-0" md=2> -->
@@ -20,22 +20,21 @@
 
 <script>
 // @ is an alias to /src
-import MainView from '@/views/MainView'
 // import UserSidebar from '@/components/UserSidebar.vue'
 // import DefinitionsSidebar from '@/components/DefinitionsSidebar.vue'
 
 export default {
   name: 'Home',
   components: {
-    MainView,
     // UserSidebar,
     // DefinitionsSidebar,
   },
   watch: {
-    $route(to, from) {
-      console.log('to', to)
-      console.log('from', from)
-    },
+    // route dbg
+    // $route(to, from) {
+    //   console.log('to', to)
+    //   console.log('from', from)
+    // },
   },
 }
 </script>

@@ -2,7 +2,8 @@
   <div @click="unselectObject">
       <div v-if="objectsUpToDate">
         <div v-for="obj in primaryElements" :key="obj.hash">
-          <router-link :to="{name: 'element_expanded', params:{id: obj.hash, elementHash: obj.hash}}">
+          <router-link
+            :to="{name: 'element_expanded', params:{id: base64(obj.hash), elementHash: obj.hash}}">
             <SimpleElement :element="obj" />
           </router-link>
         </div>
@@ -11,11 +12,12 @@
 </template>
 
 <script>
+import { Buffer } from 'buffer'
+
 import { mapActions } from 'vuex'
+import store from '@/store'
 
 import SimpleElement from '@/components/SimpleElement'
-
-import store from '@/store'
 
 export default {
   name: 'ElementStream',
@@ -56,6 +58,9 @@ export default {
       updateObjects: 'updateObjects',
     }),
 
+    base64(hex) {
+      return Buffer.from(hex, 'hex').toString('base64')
+    },
     unselectObject() {
       // should not cover objects
       // store.commit('elements/objectSelected', { selected: false })
