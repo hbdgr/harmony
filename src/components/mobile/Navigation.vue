@@ -8,7 +8,8 @@
 
     <!-- <b-navbar-brand>Harmony</b-navbar-brand> -->
 
-    <b-form-input id="mobile-navsearch" size="sm" class="ml-auto" v-bind:placeholder="$t('word.search') " v-model="navSearchStr">
+    <b-form-input id="mobile-navsearch" size="sm" class="ml-auto"
+      v-bind:placeholder="$t('word.search') " v-model="navSearchStr">
     </b-form-input>
     <b-nav-form class="ml-1 mr-auto">
       <b-button v-b-toggle.collapse-addobject class="blue-glow" size="sm"> + </b-button>
@@ -18,7 +19,7 @@
       <b-navbar-nav class="ml-auto">
 
         <b-nav-item>
-          <router-link tag="li" to="/"> {{ $t('word.home') }} </router-link>
+          <router-link tag="li" to="/mainview"> {{ $t('word.home') }} </router-link>
         </b-nav-item>
         <b-nav-item disabled>
           <router-link tag="li" to="/about"> {{ $t('word.contact') }}  </router-link>

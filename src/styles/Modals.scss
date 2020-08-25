@@ -1,0 +1,43 @@
+@import 'foundation/shared';
+
+.addobject-close {
+  color: $light-gray;
+}
+
+.addobject-close:hover {
+  color: $mid-gray;
+  animation: color_change 3s;
+}
+
+.addobject-modal {
+  color: white;
+  background-color: $darkest-gray;
+}
+
+.modal-header {
+  border: 0px !important;
+  border-radius: 0 !important;
+}
+
+.modal-footer {
+  border: 0px !important;
+  border-radius: 0 !important;
+}
+
+.addobject-modal-header {
+  @extend .addobject-modal;
+
+  border-bottom: 0;
+}
+
+.addobject-modal-body {
+  @extend .addobject-modal;
+
+  border: 0;
+}
+
+.addobject-modal-footer {
+  @extend .addobject-modal;
+
+  border-top: 0;
+}

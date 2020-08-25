@@ -3,7 +3,7 @@
     <b-container>
       <b-row>
         <!-- <AddRelation /> -->
-        <AddObject />
+        <!-- <AddObject /> -->
       </b-row>
       <b-row>
         <div class="centered">
@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import AddObject from '@/components/AddObject'
+// import AddObject from '@/components/AddObject'
 // import AddRelation from '@/components/AddRelation.vue'
 
 import store from '@/store'
@@ -23,7 +23,7 @@ import store from '@/store'
 export default {
   name: 'MainView',
   components: {
-    AddObject,
+    // AddObject,
     // AddRelation,
   },
   data() {

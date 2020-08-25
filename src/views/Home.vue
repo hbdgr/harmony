@@ -1,5 +1,6 @@
 <template>
   <div id="home">
+    <AddObjectModal />
     <b-container fluid>
       <b-row>
         <!-- <b-col class="ml-auto mr-0" md=2> -->
@@ -22,12 +23,14 @@
 // @ is an alias to /src
 // import UserSidebar from '@/components/UserSidebar.vue'
 // import DefinitionsSidebar from '@/components/DefinitionsSidebar.vue'
+import AddObjectModal from '@/modals/AddObject'
 
 export default {
   name: 'Home',
   components: {
     // UserSidebar,
     // DefinitionsSidebar,
+    AddObjectModal,
   },
   watch: {
     // route dbg
